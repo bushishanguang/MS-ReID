@@ -9,6 +9,7 @@ import torch
 import torch.nn as nn
 from ignite.engine import Engine
 
+from core.utils.logger import get_experiment_name
 from core.utils.reid_metric import R1_mAP, R1_mAP_reranking
 
 
@@ -54,7 +55,7 @@ def inference(
 ):
     device = cfg.MODEL.DEVICE
 
-    logger = logging.getLogger("reid_baseline.inference")
+    logger = logging.getLogger("{}.inference".format(get_experiment_name(cfg.OUTPUT_DIR)))
     logger.info("Enter inferencing")
     if cfg.TEST.RE_RANKING == 'no':
         print("Create evaluator")

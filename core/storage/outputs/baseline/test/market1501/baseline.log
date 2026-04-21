@@ -1,12 +1,12 @@
-2026-04-21 04:31:48,166 reid_baseline INFO: Using 1 GPUS
-2026-04-21 04:31:48,166 reid_baseline INFO: Namespace(config_file='', opts=['DATASETS.NAMES', "('dukemtmc',)", 'TEST.WEIGHT', './core/storage/outputs/baseline/train/dukemtmc/resnet50_model_60.pth', 'OUTPUT_DIR', './core/storage/outputs/baseline/test/dukemtmc'])
-2026-04-21 04:31:48,166 reid_baseline INFO: Running with config:
+2026-04-21 03:17:54,133 baseline INFO: Using 1 GPUS
+2026-04-21 03:17:54,133 baseline INFO: Namespace(config_file='', opts=['DATASETS.NAMES', "('market1501',)", 'TEST.WEIGHT', './core/storage/outputs/baseline/train/market1501/resnet50_model_60.pth', 'OUTPUT_DIR', './core/storage/outputs/baseline/test/market1501'])
+2026-04-21 03:17:54,133 baseline INFO: Running with config:
 DATALOADER:
   NUM_INSTANCE: 4
   NUM_WORKERS: 4
   SAMPLER: softmax_triplet
 DATASETS:
-  NAMES: ('dukemtmc',)
+  NAMES: ('market1501',)
   ROOT_DIR: ./core/storage/datasets
 INPUT:
   PADDING: 10
@@ -27,7 +27,7 @@ MODEL:
   NECK: bnneck
   PRETRAIN_CHOICE: imagenet
   PRETRAIN_PATH: ./core/storage/datasets/pretrained/resnet50-19c8e357.pth
-OUTPUT_DIR: ./core/storage/outputs/baseline/test/dukemtmc
+OUTPUT_DIR: ./core/storage/outputs/baseline/test/market1501
 SOLVER:
   BASE_LR: 0.0003
   BIAS_LR_FACTOR: 2
@@ -59,10 +59,10 @@ TEST:
   IMS_PER_BATCH: 64
   NECK_FEAT: after
   RE_RANKING: no
-  WEIGHT: ./core/storage/outputs/baseline/train/dukemtmc/resnet50_model_60.pth
-2026-04-21 04:31:49,088 reid_baseline.inference INFO: Enter inferencing
-2026-04-21 04:32:58,644 reid_baseline.inference INFO: Validation Results
-2026-04-21 04:32:58,644 reid_baseline.inference INFO: mAP: 70.5%
-2026-04-21 04:32:58,644 reid_baseline.inference INFO: CMC curve, Rank-1  :82.9%
-2026-04-21 04:32:58,644 reid_baseline.inference INFO: CMC curve, Rank-5  :91.9%
-2026-04-21 04:32:58,644 reid_baseline.inference INFO: CMC curve, Rank-10 :94.5%
+  WEIGHT: ./core/storage/outputs/baseline/train/market1501/resnet50_model_60.pth
+2026-04-21 03:17:55,057 baseline.inference INFO: Enter inferencing
+2026-04-21 03:19:15,793 baseline.inference INFO: Validation Results
+2026-04-21 03:19:15,793 baseline.inference INFO: mAP: 79.0%
+2026-04-21 03:19:15,793 baseline.inference INFO: CMC curve, Rank-1  :91.6%
+2026-04-21 03:19:15,793 baseline.inference INFO: CMC curve, Rank-5  :97.4%
+2026-04-21 03:19:15,793 baseline.inference INFO: CMC curve, Rank-10 :98.7%

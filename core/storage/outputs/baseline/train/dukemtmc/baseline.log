@@ -1,0 +1,273 @@
+2026-04-21 03:19:17,499 baseline INFO: Using 1 GPUS
+2026-04-21 03:19:17,499 baseline INFO: Namespace(config_file='', opts=['DATASETS.NAMES', "('dukemtmc',)", 'OUTPUT_DIR', './core/storage/outputs/baseline/train/dukemtmc'])
+2026-04-21 03:19:17,499 baseline INFO: Running with config:
+DATALOADER:
+  NUM_INSTANCE: 4
+  NUM_WORKERS: 4
+  SAMPLER: softmax_triplet
+DATASETS:
+  NAMES: ('dukemtmc',)
+  ROOT_DIR: ./core/storage/datasets
+INPUT:
+  PADDING: 10
+  PIXEL_MEAN: [0.485, 0.456, 0.406]
+  PIXEL_STD: [0.229, 0.224, 0.225]
+  PROB: 0.5
+  RE_PROB: 0.5
+  SIZE_TEST: [256, 128]
+  SIZE_TRAIN: [256, 128]
+MODEL:
+  DEVICE: cuda
+  DEVICE_ID: 0
+  IF_LABELSMOOTH: on
+  IF_WITH_CENTER: no
+  LAST_STRIDE: 1
+  METRIC_LOSS_TYPE: triplet
+  NAME: resnet50
+  NECK: bnneck
+  PRETRAIN_CHOICE: imagenet
+  PRETRAIN_PATH: ./core/storage/datasets/pretrained/resnet50-19c8e357.pth
+OUTPUT_DIR: ./core/storage/outputs/baseline/train/dukemtmc
+SOLVER:
+  BASE_LR: 0.0003
+  BIAS_LR_FACTOR: 2
+  CENTER_LOSS_WEIGHT: 0.0005
+  CENTER_LR: 0.5
+  CHECKPOINT_PERIOD: 10
+  CLUSTER_MARGIN: 0.3
+  EVAL_PERIOD: 10
+  GAMMA: 0.1
+  IMS_PER_BATCH: 96
+  LOG_PERIOD: 100
+  MARGIN: 0.3
+  MAX_EPOCHS: 60
+  MOMENTUM: 0.9
+  OPTIMIZER_NAME: Adam
+  RANGE_ALPHA: 0
+  RANGE_BETA: 1
+  RANGE_K: 2
+  RANGE_LOSS_WEIGHT: 1
+  RANGE_MARGIN: 0.3
+  STEPS: (30, 50)
+  WARMUP_FACTOR: 0.3333333333333333
+  WARMUP_ITERS: 500
+  WARMUP_METHOD: linear
+  WEIGHT_DECAY: 0.0005
+  WEIGHT_DECAY_BIAS: 0.0
+TEST:
+  FEAT_NORM: yes
+  IMS_PER_BATCH: 64
+  NECK_FEAT: after
+  RE_RANKING: no
+  WEIGHT: 
+2026-04-21 03:19:18,074 baseline.train INFO: Start training
+2026-04-21 03:20:07,107 baseline.train INFO: Epoch[1] Iteration[100/149] Loss: 7.842, Acc: 0.111, Base Lr: 1.00e-04
+2026-04-21 03:20:26,866 baseline.train INFO: Epoch 1 done. Time per batch: 67.843[s] Speed: 210.8[samples/s]
+2026-04-21 03:20:26,867 baseline.train INFO: ----------
+2026-04-21 03:21:12,719 baseline.train INFO: Epoch[2] Iteration[100/148] Loss: 5.202, Acc: 0.302, Base Lr: 1.01e-04
+2026-04-21 03:21:32,134 baseline.train INFO: Epoch 2 done. Time per batch: 64.456[s] Speed: 220.4[samples/s]
+2026-04-21 03:21:32,134 baseline.train INFO: ----------
+2026-04-21 03:22:17,860 baseline.train INFO: Epoch[3] Iteration[100/149] Loss: 3.769, Acc: 0.526, Base Lr: 1.01e-04
+2026-04-21 03:22:37,549 baseline.train INFO: Epoch 3 done. Time per batch: 64.627[s] Speed: 221.3[samples/s]
+2026-04-21 03:22:37,549 baseline.train INFO: ----------
+2026-04-21 03:23:23,262 baseline.train INFO: Epoch[4] Iteration[100/148] Loss: 2.887, Acc: 0.725, Base Lr: 1.02e-04
+2026-04-21 03:23:42,641 baseline.train INFO: Epoch 4 done. Time per batch: 64.268[s] Speed: 221.1[samples/s]
+2026-04-21 03:23:42,641 baseline.train INFO: ----------
+2026-04-21 03:24:28,293 baseline.train INFO: Epoch[5] Iteration[100/150] Loss: 2.201, Acc: 0.869, Base Lr: 1.02e-04
+2026-04-21 03:24:48,485 baseline.train INFO: Epoch 5 done. Time per batch: 65.033[s] Speed: 221.4[samples/s]
+2026-04-21 03:24:48,485 baseline.train INFO: ----------
+2026-04-21 03:25:34,276 baseline.train INFO: Epoch[6] Iteration[100/149] Loss: 1.844, Acc: 0.917, Base Lr: 1.02e-04
+2026-04-21 03:25:54,057 baseline.train INFO: Epoch 6 done. Time per batch: 64.745[s] Speed: 220.9[samples/s]
+2026-04-21 03:25:54,057 baseline.train INFO: ----------
+2026-04-21 03:26:39,672 baseline.train INFO: Epoch[7] Iteration[100/149] Loss: 1.679, Acc: 0.944, Base Lr: 1.03e-04
+2026-04-21 03:26:59,418 baseline.train INFO: Epoch 7 done. Time per batch: 64.586[s] Speed: 221.5[samples/s]
+2026-04-21 03:26:59,418 baseline.train INFO: ----------
+2026-04-21 03:27:44,781 baseline.train INFO: Epoch[8] Iteration[100/149] Loss: 1.554, Acc: 0.962, Base Lr: 1.03e-04
+2026-04-21 03:28:04,639 baseline.train INFO: Epoch 8 done. Time per batch: 64.426[s] Speed: 222.0[samples/s]
+2026-04-21 03:28:04,639 baseline.train INFO: ----------
+2026-04-21 03:28:50,277 baseline.train INFO: Epoch[9] Iteration[100/149] Loss: 1.503, Acc: 0.962, Base Lr: 1.04e-04
+2026-04-21 03:29:10,172 baseline.train INFO: Epoch 9 done. Time per batch: 64.740[s] Speed: 220.9[samples/s]
+2026-04-21 03:29:10,172 baseline.train INFO: ----------
+2026-04-21 03:29:55,921 baseline.train INFO: Epoch[10] Iteration[100/149] Loss: 1.427, Acc: 0.973, Base Lr: 1.04e-04
+2026-04-21 03:30:16,169 baseline.train INFO: Epoch 10 done. Time per batch: 64.830[s] Speed: 220.6[samples/s]
+2026-04-21 03:30:16,169 baseline.train INFO: ----------
+2026-04-21 03:31:26,548 baseline.train INFO: Validation Results - Epoch: 10
+2026-04-21 03:31:26,548 baseline.train INFO: mAP: 63.4%
+2026-04-21 03:31:26,548 baseline.train INFO: CMC curve, Rank-1  :78.8%
+2026-04-21 03:31:26,548 baseline.train INFO: CMC curve, Rank-5  :89.6%
+2026-04-21 03:31:26,548 baseline.train INFO: CMC curve, Rank-10 :92.8%
+2026-04-21 03:32:12,292 baseline.train INFO: Epoch[11] Iteration[100/149] Loss: 1.405, Acc: 0.977, Base Lr: 1.04e-04
+2026-04-21 03:32:32,131 baseline.train INFO: Epoch 11 done. Time per batch: 64.754[s] Speed: 220.9[samples/s]
+2026-04-21 03:32:32,132 baseline.train INFO: ----------
+2026-04-21 03:33:18,120 baseline.train INFO: Epoch[12] Iteration[100/148] Loss: 1.372, Acc: 0.979, Base Lr: 1.05e-04
+2026-04-21 03:33:37,534 baseline.train INFO: Epoch 12 done. Time per batch: 64.586[s] Speed: 220.0[samples/s]
+2026-04-21 03:33:37,534 baseline.train INFO: ----------
+2026-04-21 03:34:23,354 baseline.train INFO: Epoch[13] Iteration[100/148] Loss: 1.330, Acc: 0.985, Base Lr: 1.05e-04
+2026-04-21 03:34:42,769 baseline.train INFO: Epoch 13 done. Time per batch: 64.431[s] Speed: 220.5[samples/s]
+2026-04-21 03:34:42,769 baseline.train INFO: ----------
+2026-04-21 03:35:28,822 baseline.train INFO: Epoch[14] Iteration[100/147] Loss: 1.335, Acc: 0.981, Base Lr: 1.06e-04
+2026-04-21 03:35:47,856 baseline.train INFO: Epoch 14 done. Time per batch: 64.286[s] Speed: 219.5[samples/s]
+2026-04-21 03:35:47,856 baseline.train INFO: ----------
+2026-04-21 03:36:33,594 baseline.train INFO: Epoch[15] Iteration[100/149] Loss: 1.303, Acc: 0.984, Base Lr: 1.06e-04
+2026-04-21 03:36:53,379 baseline.train INFO: Epoch 15 done. Time per batch: 64.727[s] Speed: 221.0[samples/s]
+2026-04-21 03:36:53,379 baseline.train INFO: ----------
+2026-04-21 03:37:39,059 baseline.train INFO: Epoch[16] Iteration[100/148] Loss: 1.287, Acc: 0.985, Base Lr: 1.06e-04
+2026-04-21 03:37:58,444 baseline.train INFO: Epoch 16 done. Time per batch: 64.263[s] Speed: 221.1[samples/s]
+2026-04-21 03:37:58,444 baseline.train INFO: ----------
+2026-04-21 03:38:44,163 baseline.train INFO: Epoch[17] Iteration[100/148] Loss: 1.299, Acc: 0.985, Base Lr: 1.07e-04
+2026-04-21 03:39:03,606 baseline.train INFO: Epoch 17 done. Time per batch: 64.351[s] Speed: 220.8[samples/s]
+2026-04-21 03:39:03,606 baseline.train INFO: ----------
+2026-04-21 03:39:49,813 baseline.train INFO: Epoch[18] Iteration[100/149] Loss: 1.268, Acc: 0.989, Base Lr: 1.07e-04
+2026-04-21 03:40:09,632 baseline.train INFO: Epoch 18 done. Time per batch: 65.174[s] Speed: 219.5[samples/s]
+2026-04-21 03:40:09,632 baseline.train INFO: ----------
+2026-04-21 03:40:55,463 baseline.train INFO: Epoch[19] Iteration[100/149] Loss: 1.253, Acc: 0.989, Base Lr: 1.08e-04
+2026-04-21 03:41:15,394 baseline.train INFO: Epoch 19 done. Time per batch: 64.929[s] Speed: 220.3[samples/s]
+2026-04-21 03:41:15,394 baseline.train INFO: ----------
+2026-04-21 03:42:01,320 baseline.train INFO: Epoch[20] Iteration[100/148] Loss: 1.241, Acc: 0.990, Base Lr: 1.08e-04
+2026-04-21 03:42:21,180 baseline.train INFO: Epoch 20 done. Time per batch: 64.554[s] Speed: 220.1[samples/s]
+2026-04-21 03:42:21,180 baseline.train INFO: ----------
+2026-04-21 03:43:30,289 baseline.train INFO: Validation Results - Epoch: 20
+2026-04-21 03:43:30,289 baseline.train INFO: mAP: 64.0%
+2026-04-21 03:43:30,290 baseline.train INFO: CMC curve, Rank-1  :79.0%
+2026-04-21 03:43:30,290 baseline.train INFO: CMC curve, Rank-5  :90.6%
+2026-04-21 03:43:30,290 baseline.train INFO: CMC curve, Rank-10 :93.0%
+2026-04-21 03:44:15,767 baseline.train INFO: Epoch[21] Iteration[100/149] Loss: 1.229, Acc: 0.990, Base Lr: 1.08e-04
+2026-04-21 03:44:35,553 baseline.train INFO: Epoch 21 done. Time per batch: 64.501[s] Speed: 221.8[samples/s]
+2026-04-21 03:44:35,554 baseline.train INFO: ----------
+2026-04-21 03:45:21,306 baseline.train INFO: Epoch[22] Iteration[100/151] Loss: 1.242, Acc: 0.989, Base Lr: 1.09e-04
+2026-04-21 03:45:41,888 baseline.train INFO: Epoch 22 done. Time per batch: 65.554[s] Speed: 221.1[samples/s]
+2026-04-21 03:45:41,888 baseline.train INFO: ----------
+2026-04-21 03:46:27,795 baseline.train INFO: Epoch[23] Iteration[100/149] Loss: 1.238, Acc: 0.992, Base Lr: 1.09e-04
+2026-04-21 03:46:47,539 baseline.train INFO: Epoch 23 done. Time per batch: 64.853[s] Speed: 220.6[samples/s]
+2026-04-21 03:46:47,539 baseline.train INFO: ----------
+2026-04-21 03:47:33,244 baseline.train INFO: Epoch[24] Iteration[100/148] Loss: 1.231, Acc: 0.989, Base Lr: 1.10e-04
+2026-04-21 03:47:52,668 baseline.train INFO: Epoch 24 done. Time per batch: 64.334[s] Speed: 220.8[samples/s]
+2026-04-21 03:47:52,669 baseline.train INFO: ----------
+2026-04-21 03:48:38,229 baseline.train INFO: Epoch[25] Iteration[100/149] Loss: 1.224, Acc: 0.990, Base Lr: 1.10e-04
+2026-04-21 03:48:58,113 baseline.train INFO: Epoch 25 done. Time per batch: 64.605[s] Speed: 221.4[samples/s]
+2026-04-21 03:48:58,113 baseline.train INFO: ----------
+2026-04-21 03:49:44,075 baseline.train INFO: Epoch[26] Iteration[100/150] Loss: 1.213, Acc: 0.991, Base Lr: 1.10e-04
+2026-04-21 03:50:04,289 baseline.train INFO: Epoch 26 done. Time per batch: 65.363[s] Speed: 220.3[samples/s]
+2026-04-21 03:50:04,289 baseline.train INFO: ----------
+2026-04-21 03:50:49,857 baseline.train INFO: Epoch[27] Iteration[100/149] Loss: 1.204, Acc: 0.994, Base Lr: 1.11e-04
+2026-04-21 03:51:09,742 baseline.train INFO: Epoch 27 done. Time per batch: 64.636[s] Speed: 221.3[samples/s]
+2026-04-21 03:51:09,742 baseline.train INFO: ----------
+2026-04-21 03:51:55,415 baseline.train INFO: Epoch[28] Iteration[100/149] Loss: 1.211, Acc: 0.993, Base Lr: 1.11e-04
+2026-04-21 03:52:15,276 baseline.train INFO: Epoch 28 done. Time per batch: 64.705[s] Speed: 221.1[samples/s]
+2026-04-21 03:52:15,276 baseline.train INFO: ----------
+2026-04-21 03:53:01,217 baseline.train INFO: Epoch[29] Iteration[100/149] Loss: 1.213, Acc: 0.992, Base Lr: 1.12e-04
+2026-04-21 03:53:21,081 baseline.train INFO: Epoch 29 done. Time per batch: 65.004[s] Speed: 220.0[samples/s]
+2026-04-21 03:53:21,082 baseline.train INFO: ----------
+2026-04-21 03:54:06,858 baseline.train INFO: Epoch[30] Iteration[100/149] Loss: 1.169, Acc: 0.995, Base Lr: 1.12e-05
+2026-04-21 03:54:27,074 baseline.train INFO: Epoch 30 done. Time per batch: 64.814[s] Speed: 220.7[samples/s]
+2026-04-21 03:54:27,074 baseline.train INFO: ----------
+2026-04-21 03:55:35,925 baseline.train INFO: Validation Results - Epoch: 30
+2026-04-21 03:55:35,925 baseline.train INFO: mAP: 68.8%
+2026-04-21 03:55:35,925 baseline.train INFO: CMC curve, Rank-1  :82.2%
+2026-04-21 03:55:35,925 baseline.train INFO: CMC curve, Rank-5  :90.9%
+2026-04-21 03:55:35,925 baseline.train INFO: CMC curve, Rank-10 :93.8%
+2026-04-21 03:56:21,328 baseline.train INFO: Epoch[31] Iteration[100/149] Loss: 1.156, Acc: 0.993, Base Lr: 1.12e-05
+2026-04-21 03:56:41,085 baseline.train INFO: Epoch 31 done. Time per batch: 64.403[s] Speed: 222.1[samples/s]
+2026-04-21 03:56:41,085 baseline.train INFO: ----------
+2026-04-21 03:57:26,836 baseline.train INFO: Epoch[32] Iteration[100/148] Loss: 1.135, Acc: 0.997, Base Lr: 1.13e-05
+2026-04-21 03:57:46,244 baseline.train INFO: Epoch 32 done. Time per batch: 64.395[s] Speed: 220.6[samples/s]
+2026-04-21 03:57:46,244 baseline.train INFO: ----------
+2026-04-21 03:58:31,953 baseline.train INFO: Epoch[33] Iteration[100/149] Loss: 1.126, Acc: 0.997, Base Lr: 1.13e-05
+2026-04-21 03:58:51,778 baseline.train INFO: Epoch 33 done. Time per batch: 64.721[s] Speed: 221.0[samples/s]
+2026-04-21 03:58:51,778 baseline.train INFO: ----------
+2026-04-21 03:59:37,480 baseline.train INFO: Epoch[34] Iteration[100/149] Loss: 1.121, Acc: 0.998, Base Lr: 1.14e-05
+2026-04-21 03:59:57,278 baseline.train INFO: Epoch 34 done. Time per batch: 64.695[s] Speed: 221.1[samples/s]
+2026-04-21 03:59:57,278 baseline.train INFO: ----------
+2026-04-21 04:00:43,185 baseline.train INFO: Epoch[35] Iteration[100/149] Loss: 1.123, Acc: 0.996, Base Lr: 1.14e-05
+2026-04-21 04:01:03,000 baseline.train INFO: Epoch 35 done. Time per batch: 64.916[s] Speed: 220.3[samples/s]
+2026-04-21 04:01:03,000 baseline.train INFO: ----------
+2026-04-21 04:01:48,632 baseline.train INFO: Epoch[36] Iteration[100/149] Loss: 1.119, Acc: 0.996, Base Lr: 1.14e-05
+2026-04-21 04:02:08,402 baseline.train INFO: Epoch 36 done. Time per batch: 64.604[s] Speed: 221.4[samples/s]
+2026-04-21 04:02:08,403 baseline.train INFO: ----------
+2026-04-21 04:02:53,942 baseline.train INFO: Epoch[37] Iteration[100/148] Loss: 1.110, Acc: 0.998, Base Lr: 1.15e-05
+2026-04-21 04:03:13,401 baseline.train INFO: Epoch 37 done. Time per batch: 64.215[s] Speed: 221.3[samples/s]
+2026-04-21 04:03:13,402 baseline.train INFO: ----------
+2026-04-21 04:03:59,072 baseline.train INFO: Epoch[38] Iteration[100/148] Loss: 1.105, Acc: 0.998, Base Lr: 1.15e-05
+2026-04-21 04:04:18,497 baseline.train INFO: Epoch 38 done. Time per batch: 64.305[s] Speed: 220.9[samples/s]
+2026-04-21 04:04:18,497 baseline.train INFO: ----------
+2026-04-21 04:05:04,142 baseline.train INFO: Epoch[39] Iteration[100/148] Loss: 1.110, Acc: 0.999, Base Lr: 1.16e-05
+2026-04-21 04:05:23,624 baseline.train INFO: Epoch 39 done. Time per batch: 64.331[s] Speed: 220.9[samples/s]
+2026-04-21 04:05:23,624 baseline.train INFO: ----------
+2026-04-21 04:06:09,290 baseline.train INFO: Epoch[40] Iteration[100/148] Loss: 1.104, Acc: 0.998, Base Lr: 1.16e-05
+2026-04-21 04:06:29,005 baseline.train INFO: Epoch 40 done. Time per batch: 64.220[s] Speed: 221.2[samples/s]
+2026-04-21 04:06:29,005 baseline.train INFO: ----------
+2026-04-21 04:07:37,798 baseline.train INFO: Validation Results - Epoch: 40
+2026-04-21 04:07:37,798 baseline.train INFO: mAP: 69.6%
+2026-04-21 04:07:37,798 baseline.train INFO: CMC curve, Rank-1  :83.0%
+2026-04-21 04:07:37,798 baseline.train INFO: CMC curve, Rank-5  :91.2%
+2026-04-21 04:07:37,798 baseline.train INFO: CMC curve, Rank-10 :94.2%
+2026-04-21 04:08:23,472 baseline.train INFO: Epoch[41] Iteration[100/148] Loss: 1.106, Acc: 0.998, Base Lr: 1.16e-05
+2026-04-21 04:08:42,783 baseline.train INFO: Epoch 41 done. Time per batch: 64.215[s] Speed: 221.3[samples/s]
+2026-04-21 04:08:42,783 baseline.train INFO: ----------
+2026-04-21 04:09:28,450 baseline.train INFO: Epoch[42] Iteration[100/149] Loss: 1.111, Acc: 0.997, Base Lr: 1.17e-05
+2026-04-21 04:09:48,236 baseline.train INFO: Epoch 42 done. Time per batch: 64.666[s] Speed: 221.2[samples/s]
+2026-04-21 04:09:48,236 baseline.train INFO: ----------
+2026-04-21 04:10:33,907 baseline.train INFO: Epoch[43] Iteration[100/149] Loss: 1.106, Acc: 0.998, Base Lr: 1.17e-05
+2026-04-21 04:10:53,690 baseline.train INFO: Epoch 43 done. Time per batch: 64.661[s] Speed: 221.2[samples/s]
+2026-04-21 04:10:53,690 baseline.train INFO: ----------
+2026-04-21 04:11:39,454 baseline.train INFO: Epoch[44] Iteration[100/148] Loss: 1.108, Acc: 0.997, Base Lr: 1.18e-05
+2026-04-21 04:11:58,809 baseline.train INFO: Epoch 44 done. Time per batch: 64.316[s] Speed: 220.9[samples/s]
+2026-04-21 04:11:58,809 baseline.train INFO: ----------
+2026-04-21 04:12:44,444 baseline.train INFO: Epoch[45] Iteration[100/149] Loss: 1.095, Acc: 0.999, Base Lr: 1.18e-05
+2026-04-21 04:13:04,200 baseline.train INFO: Epoch 45 done. Time per batch: 64.584[s] Speed: 221.5[samples/s]
+2026-04-21 04:13:04,200 baseline.train INFO: ----------
+2026-04-21 04:13:49,673 baseline.train INFO: Epoch[46] Iteration[100/149] Loss: 1.095, Acc: 0.999, Base Lr: 1.18e-05
+2026-04-21 04:14:09,508 baseline.train INFO: Epoch 46 done. Time per batch: 64.516[s] Speed: 221.7[samples/s]
+2026-04-21 04:14:09,508 baseline.train INFO: ----------
+2026-04-21 04:14:55,114 baseline.train INFO: Epoch[47] Iteration[100/147] Loss: 1.096, Acc: 0.998, Base Lr: 1.19e-05
+2026-04-21 04:15:14,114 baseline.train INFO: Epoch 47 done. Time per batch: 63.831[s] Speed: 221.1[samples/s]
+2026-04-21 04:15:14,114 baseline.train INFO: ----------
+2026-04-21 04:15:59,765 baseline.train INFO: Epoch[48] Iteration[100/149] Loss: 1.105, Acc: 0.999, Base Lr: 1.19e-05
+2026-04-21 04:16:19,570 baseline.train INFO: Epoch 48 done. Time per batch: 64.650[s] Speed: 221.3[samples/s]
+2026-04-21 04:16:19,570 baseline.train INFO: ----------
+2026-04-21 04:17:05,575 baseline.train INFO: Epoch[49] Iteration[100/150] Loss: 1.093, Acc: 0.999, Base Lr: 1.20e-05
+2026-04-21 04:17:25,899 baseline.train INFO: Epoch 49 done. Time per batch: 65.497[s] Speed: 219.9[samples/s]
+2026-04-21 04:17:25,899 baseline.train INFO: ----------
+2026-04-21 04:18:11,613 baseline.train INFO: Epoch[50] Iteration[100/150] Loss: 1.094, Acc: 0.999, Base Lr: 1.20e-06
+2026-04-21 04:18:32,178 baseline.train INFO: Epoch 50 done. Time per batch: 65.104[s] Speed: 221.2[samples/s]
+2026-04-21 04:18:32,178 baseline.train INFO: ----------
+2026-04-21 04:19:40,832 baseline.train INFO: Validation Results - Epoch: 50
+2026-04-21 04:19:40,832 baseline.train INFO: mAP: 70.4%
+2026-04-21 04:19:40,832 baseline.train INFO: CMC curve, Rank-1  :83.1%
+2026-04-21 04:19:40,832 baseline.train INFO: CMC curve, Rank-5  :91.9%
+2026-04-21 04:19:40,832 baseline.train INFO: CMC curve, Rank-10 :94.3%
+2026-04-21 04:20:26,581 baseline.train INFO: Epoch[51] Iteration[100/149] Loss: 1.091, Acc: 0.999, Base Lr: 1.20e-06
+2026-04-21 04:20:46,344 baseline.train INFO: Epoch 51 done. Time per batch: 64.720[s] Speed: 221.0[samples/s]
+2026-04-21 04:20:46,344 baseline.train INFO: ----------
+2026-04-21 04:21:32,078 baseline.train INFO: Epoch[52] Iteration[100/149] Loss: 1.092, Acc: 0.998, Base Lr: 1.21e-06
+2026-04-21 04:21:51,917 baseline.train INFO: Epoch 52 done. Time per batch: 64.790[s] Speed: 220.8[samples/s]
+2026-04-21 04:21:51,917 baseline.train INFO: ----------
+2026-04-21 04:22:37,894 baseline.train INFO: Epoch[53] Iteration[100/149] Loss: 1.092, Acc: 0.999, Base Lr: 1.21e-06
+2026-04-21 04:22:57,725 baseline.train INFO: Epoch 53 done. Time per batch: 65.029[s] Speed: 220.0[samples/s]
+2026-04-21 04:22:57,726 baseline.train INFO: ----------
+2026-04-21 04:23:43,542 baseline.train INFO: Epoch[54] Iteration[100/149] Loss: 1.085, Acc: 0.999, Base Lr: 1.22e-06
+2026-04-21 04:24:03,445 baseline.train INFO: Epoch 54 done. Time per batch: 64.919[s] Speed: 220.3[samples/s]
+2026-04-21 04:24:03,445 baseline.train INFO: ----------
+2026-04-21 04:24:49,108 baseline.train INFO: Epoch[55] Iteration[100/150] Loss: 1.087, Acc: 0.999, Base Lr: 1.22e-06
+2026-04-21 04:25:09,316 baseline.train INFO: Epoch 55 done. Time per batch: 65.084[s] Speed: 221.3[samples/s]
+2026-04-21 04:25:09,316 baseline.train INFO: ----------
+2026-04-21 04:25:54,972 baseline.train INFO: Epoch[56] Iteration[100/149] Loss: 1.086, Acc: 0.999, Base Lr: 1.22e-06
+2026-04-21 04:26:14,781 baseline.train INFO: Epoch 56 done. Time per batch: 64.678[s] Speed: 221.2[samples/s]
+2026-04-21 04:26:14,781 baseline.train INFO: ----------
+2026-04-21 04:27:00,188 baseline.train INFO: Epoch[57] Iteration[100/148] Loss: 1.087, Acc: 0.999, Base Lr: 1.23e-06
+2026-04-21 04:27:19,597 baseline.train INFO: Epoch 57 done. Time per batch: 64.018[s] Speed: 221.9[samples/s]
+2026-04-21 04:27:19,597 baseline.train INFO: ----------
+2026-04-21 04:28:05,068 baseline.train INFO: Epoch[58] Iteration[100/150] Loss: 1.080, Acc: 0.999, Base Lr: 1.23e-06
+2026-04-21 04:28:25,236 baseline.train INFO: Epoch 58 done. Time per batch: 64.837[s] Speed: 222.1[samples/s]
+2026-04-21 04:28:25,236 baseline.train INFO: ----------
+2026-04-21 04:29:10,887 baseline.train INFO: Epoch[59] Iteration[100/149] Loss: 1.088, Acc: 0.997, Base Lr: 1.24e-06
+2026-04-21 04:29:30,687 baseline.train INFO: Epoch 59 done. Time per batch: 64.656[s] Speed: 221.2[samples/s]
+2026-04-21 04:29:30,687 baseline.train INFO: ----------
+2026-04-21 04:30:16,768 baseline.train INFO: Epoch[60] Iteration[100/150] Loss: 1.093, Acc: 0.999, Base Lr: 1.24e-06
+2026-04-21 04:30:37,302 baseline.train INFO: Epoch 60 done. Time per batch: 65.446[s] Speed: 220.0[samples/s]
+2026-04-21 04:30:37,302 baseline.train INFO: ----------
+2026-04-21 04:31:46,035 baseline.train INFO: Validation Results - Epoch: 60
+2026-04-21 04:31:46,035 baseline.train INFO: mAP: 70.5%
+2026-04-21 04:31:46,035 baseline.train INFO: CMC curve, Rank-1  :82.9%
+2026-04-21 04:31:46,035 baseline.train INFO: CMC curve, Rank-5  :91.9%
+2026-04-21 04:31:46,035 baseline.train INFO: CMC curve, Rank-10 :94.5%
