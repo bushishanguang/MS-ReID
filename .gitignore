@@ -1,0 +1,9 @@
+.venv/
+uv.lock
+*.pth
+
+__pycache__/
+**/__pycache__/
+
+core/storage/datasets/market1501/
+core/storage/datasets/dukemtmc-reid/
