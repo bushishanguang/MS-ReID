@@ -1,0 +1,1 @@
+uv run python -m core.tools.test DATASETS.NAMES "('dukemtmc',)" TEST.WEIGHT "./core/storage/outputs/baseline/train/dukemtmc/resnet50_model_60.pth" OUTPUT_DIR "./core/storage/outputs/baseline/test/dukemtmc"
