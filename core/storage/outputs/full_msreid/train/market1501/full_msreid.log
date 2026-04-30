@@ -1,0 +1,285 @@
+2026-04-24 15:20:43,116 full_msreid INFO: Using 1 GPUS
+2026-04-24 15:20:43,116 full_msreid INFO: Namespace(config_file='./core/configs/exp5_full_msreid.yml', opts=['DATASETS.NAMES', "('market1501',)", 'OUTPUT_DIR', './core/storage/outputs/full_msreid/train/market1501'])
+2026-04-24 15:20:43,116 full_msreid INFO: Loaded configuration file ./core/configs/exp5_full_msreid.yml
+2026-04-24 15:20:43,116 full_msreid INFO: 
+MODEL:
+  USE_WAVELET: true
+  USE_MULTISCALE_BRANCH: true
+  USE_ATTENTION_FUSION: true
+  RETURN_VISUALS: false
+
+2026-04-24 15:20:43,116 full_msreid INFO: Running with config:
+DATALOADER:
+  NUM_INSTANCE: 4
+  NUM_WORKERS: 4
+  SAMPLER: softmax_triplet
+DATASETS:
+  NAMES: ('market1501',)
+  ROOT_DIR: ./core/storage/datasets
+INPUT:
+  PADDING: 10
+  PIXEL_MEAN: [0.485, 0.456, 0.406]
+  PIXEL_STD: [0.229, 0.224, 0.225]
+  PROB: 0.5
+  RE_PROB: 0.5
+  SIZE_TEST: [256, 128]
+  SIZE_TRAIN: [256, 128]
+MODEL:
+  DEVICE: cuda
+  DEVICE_ID: 0
+  IF_LABELSMOOTH: on
+  IF_WITH_CENTER: no
+  LAST_STRIDE: 1
+  METRIC_LOSS_TYPE: triplet
+  NAME: resnet50
+  NECK: bnneck
+  PRETRAIN_CHOICE: imagenet
+  PRETRAIN_PATH: ./core/storage/datasets/pretrained/resnet50-19c8e357.pth
+  RETURN_VISUALS: False
+  USE_ATTENTION_FUSION: True
+  USE_MULTISCALE_BRANCH: True
+  USE_WAVELET: True
+OUTPUT_DIR: ./core/storage/outputs/full_msreid/train/market1501
+SOLVER:
+  BASE_LR: 0.0003
+  BIAS_LR_FACTOR: 2
+  CENTER_LOSS_WEIGHT: 0.0005
+  CENTER_LR: 0.5
+  CHECKPOINT_PERIOD: 10
+  CLUSTER_MARGIN: 0.3
+  EVAL_PERIOD: 10
+  GAMMA: 0.1
+  IMS_PER_BATCH: 96
+  LOG_PERIOD: 100
+  MARGIN: 0.3
+  MAX_EPOCHS: 60
+  MOMENTUM: 0.9
+  OPTIMIZER_NAME: Adam
+  RANGE_ALPHA: 0
+  RANGE_BETA: 1
+  RANGE_K: 2
+  RANGE_LOSS_WEIGHT: 1
+  RANGE_MARGIN: 0.3
+  STEPS: (30, 50)
+  WARMUP_FACTOR: 0.3333333333333333
+  WARMUP_ITERS: 500
+  WARMUP_METHOD: linear
+  WEIGHT_DECAY: 0.0005
+  WEIGHT_DECAY_BIAS: 0.0
+TEST:
+  FEAT_NORM: yes
+  IMS_PER_BATCH: 64
+  NECK_FEAT: after
+  RE_RANKING: no
+  WEIGHT: 
+2026-04-24 15:20:43,996 full_msreid.train INFO: Start training
+2026-04-24 15:24:16,789 full_msreid.train INFO: Epoch[1] Iteration[100/121] Loss: 7.794, Acc: 0.048, Base Lr: 1.00e-04
+2026-04-24 15:24:57,992 full_msreid.train INFO: Epoch 1 done. Time per batch: 253.121[s] Speed: 45.9[samples/s]
+2026-04-24 15:24:57,992 full_msreid.train INFO: ----------
+2026-04-24 15:28:19,609 full_msreid.train INFO: Epoch[2] Iteration[100/122] Loss: 5.944, Acc: 0.133, Base Lr: 1.01e-04
+2026-04-24 15:29:02,819 full_msreid.train INFO: Epoch 2 done. Time per batch: 244.101[s] Speed: 48.0[samples/s]
+2026-04-24 15:29:02,820 full_msreid.train INFO: ----------
+2026-04-24 15:32:23,878 full_msreid.train INFO: Epoch[3] Iteration[100/121] Loss: 4.780, Acc: 0.290, Base Lr: 1.01e-04
+2026-04-24 15:33:05,061 full_msreid.train INFO: Epoch 3 done. Time per batch: 241.532[s] Speed: 48.1[samples/s]
+2026-04-24 15:33:05,061 full_msreid.train INFO: ----------
+2026-04-24 15:36:27,162 full_msreid.train INFO: Epoch[4] Iteration[100/121] Loss: 3.918, Acc: 0.464, Base Lr: 1.02e-04
+2026-04-24 15:37:08,109 full_msreid.train INFO: Epoch 4 done. Time per batch: 242.332[s] Speed: 47.9[samples/s]
+2026-04-24 15:37:08,109 full_msreid.train INFO: ----------
+2026-04-24 15:40:28,136 full_msreid.train INFO: Epoch[5] Iteration[100/121] Loss: 3.127, Acc: 0.620, Base Lr: 1.02e-04
+2026-04-24 15:41:09,052 full_msreid.train INFO: Epoch 5 done. Time per batch: 240.245[s] Speed: 48.4[samples/s]
+2026-04-24 15:41:09,052 full_msreid.train INFO: ----------
+2026-04-24 15:44:28,703 full_msreid.train INFO: Epoch[6] Iteration[100/121] Loss: 2.656, Acc: 0.723, Base Lr: 1.02e-04
+2026-04-24 15:45:10,011 full_msreid.train INFO: Epoch 6 done. Time per batch: 240.214[s] Speed: 48.4[samples/s]
+2026-04-24 15:45:10,011 full_msreid.train INFO: ----------
+2026-04-24 15:48:30,334 full_msreid.train INFO: Epoch[7] Iteration[100/120] Loss: 2.253, Acc: 0.812, Base Lr: 1.03e-04
+2026-04-24 15:49:09,317 full_msreid.train INFO: Epoch 7 done. Time per batch: 238.549[s] Speed: 48.3[samples/s]
+2026-04-24 15:49:09,317 full_msreid.train INFO: ----------
+2026-04-24 15:52:29,629 full_msreid.train INFO: Epoch[8] Iteration[100/121] Loss: 2.008, Acc: 0.857, Base Lr: 1.03e-04
+2026-04-24 15:53:10,576 full_msreid.train INFO: Epoch 8 done. Time per batch: 240.546[s] Speed: 48.3[samples/s]
+2026-04-24 15:53:10,576 full_msreid.train INFO: ----------
+2026-04-24 15:56:30,217 full_msreid.train INFO: Epoch[9] Iteration[100/121] Loss: 1.823, Acc: 0.899, Base Lr: 1.04e-04
+2026-04-24 15:57:11,232 full_msreid.train INFO: Epoch 9 done. Time per batch: 239.987[s] Speed: 48.4[samples/s]
+2026-04-24 15:57:11,232 full_msreid.train INFO: ----------
+2026-04-24 16:00:31,099 full_msreid.train INFO: Epoch[10] Iteration[100/120] Loss: 1.728, Acc: 0.921, Base Lr: 1.04e-04
+2026-04-24 16:01:11,299 full_msreid.train INFO: Epoch 10 done. Time per batch: 238.390[s] Speed: 48.3[samples/s]
+2026-04-24 16:01:11,300 full_msreid.train INFO: ----------
+2026-04-24 16:02:42,784 full_msreid.train INFO: Validation Results - Epoch: 10
+2026-04-24 16:02:42,785 full_msreid.train INFO: mAP: 63.6%
+2026-04-24 16:02:42,785 full_msreid.train INFO: CMC curve, Rank-1  :84.0%
+2026-04-24 16:02:42,785 full_msreid.train INFO: CMC curve, Rank-5  :93.7%
+2026-04-24 16:02:42,785 full_msreid.train INFO: CMC curve, Rank-10 :95.9%
+2026-04-24 16:07:31,094 full_msreid.train INFO: Epoch[11] Iteration[100/122] Loss: 1.619, Acc: 0.947, Base Lr: 1.04e-04
+2026-04-24 16:08:32,892 full_msreid.train INFO: Epoch 11 done. Time per batch: 349.186[s] Speed: 33.5[samples/s]
+2026-04-24 16:08:32,892 full_msreid.train INFO: ----------
+2026-04-24 16:13:21,646 full_msreid.train INFO: Epoch[12] Iteration[100/121] Loss: 1.526, Acc: 0.954, Base Lr: 1.05e-04
+2026-04-24 16:14:19,898 full_msreid.train INFO: Epoch 12 done. Time per batch: 346.232[s] Speed: 33.5[samples/s]
+2026-04-24 16:14:19,898 full_msreid.train INFO: ----------
+2026-04-24 16:19:02,578 full_msreid.train INFO: Epoch[13] Iteration[100/122] Loss: 1.506, Acc: 0.958, Base Lr: 1.05e-04
+2026-04-24 16:20:03,814 full_msreid.train INFO: Epoch 13 done. Time per batch: 343.044[s] Speed: 34.1[samples/s]
+2026-04-24 16:20:03,815 full_msreid.train INFO: ----------
+2026-04-24 16:24:45,984 full_msreid.train INFO: Epoch[14] Iteration[100/122] Loss: 1.452, Acc: 0.972, Base Lr: 1.06e-04
+2026-04-24 16:25:47,141 full_msreid.train INFO: Epoch 14 done. Time per batch: 342.417[s] Speed: 34.2[samples/s]
+2026-04-24 16:25:47,141 full_msreid.train INFO: ----------
+2026-04-24 16:30:29,266 full_msreid.train INFO: Epoch[15] Iteration[100/122] Loss: 1.400, Acc: 0.976, Base Lr: 1.06e-04
+2026-04-24 16:31:30,187 full_msreid.train INFO: Epoch 15 done. Time per batch: 342.143[s] Speed: 34.2[samples/s]
+2026-04-24 16:31:30,187 full_msreid.train INFO: ----------
+2026-04-24 16:36:12,495 full_msreid.train INFO: Epoch[16] Iteration[100/122] Loss: 1.396, Acc: 0.971, Base Lr: 1.06e-04
+2026-04-24 16:37:13,495 full_msreid.train INFO: Epoch 16 done. Time per batch: 342.394[s] Speed: 34.2[samples/s]
+2026-04-24 16:37:13,497 full_msreid.train INFO: ----------
+2026-04-24 16:41:55,639 full_msreid.train INFO: Epoch[17] Iteration[100/121] Loss: 1.358, Acc: 0.981, Base Lr: 1.07e-04
+2026-04-24 16:42:53,967 full_msreid.train INFO: Epoch 17 done. Time per batch: 339.567[s] Speed: 34.2[samples/s]
+2026-04-24 16:42:53,967 full_msreid.train INFO: ----------
+2026-04-24 16:47:35,457 full_msreid.train INFO: Epoch[18] Iteration[100/121] Loss: 1.341, Acc: 0.982, Base Lr: 1.07e-04
+2026-04-24 16:48:33,646 full_msreid.train INFO: Epoch 18 done. Time per batch: 338.789[s] Speed: 34.3[samples/s]
+2026-04-24 16:48:33,646 full_msreid.train INFO: ----------
+2026-04-24 16:53:15,725 full_msreid.train INFO: Epoch[19] Iteration[100/122] Loss: 1.330, Acc: 0.979, Base Lr: 1.08e-04
+2026-04-24 16:54:16,645 full_msreid.train INFO: Epoch 19 done. Time per batch: 342.114[s] Speed: 34.2[samples/s]
+2026-04-24 16:54:16,645 full_msreid.train INFO: ----------
+2026-04-24 16:58:58,804 full_msreid.train INFO: Epoch[20] Iteration[100/121] Loss: 1.317, Acc: 0.986, Base Lr: 1.08e-04
+2026-04-24 16:59:59,583 full_msreid.train INFO: Epoch 20 done. Time per batch: 339.880[s] Speed: 34.2[samples/s]
+2026-04-24 16:59:59,583 full_msreid.train INFO: ----------
+2026-04-24 17:01:53,967 full_msreid.train INFO: Validation Results - Epoch: 20
+2026-04-24 17:01:53,967 full_msreid.train INFO: mAP: 70.6%
+2026-04-24 17:01:53,967 full_msreid.train INFO: CMC curve, Rank-1  :87.6%
+2026-04-24 17:01:53,967 full_msreid.train INFO: CMC curve, Rank-5  :95.9%
+2026-04-24 17:01:53,967 full_msreid.train INFO: CMC curve, Rank-10 :97.4%
+2026-04-24 17:06:37,558 full_msreid.train INFO: Epoch[21] Iteration[100/121] Loss: 1.315, Acc: 0.984, Base Lr: 1.08e-04
+2026-04-24 17:07:35,795 full_msreid.train INFO: Epoch 21 done. Time per batch: 340.938[s] Speed: 34.1[samples/s]
+2026-04-24 17:07:35,795 full_msreid.train INFO: ----------
+2026-04-24 17:12:18,158 full_msreid.train INFO: Epoch[22] Iteration[100/122] Loss: 1.299, Acc: 0.987, Base Lr: 1.09e-04
+2026-04-24 17:13:19,255 full_msreid.train INFO: Epoch 22 done. Time per batch: 342.576[s] Speed: 34.2[samples/s]
+2026-04-24 17:13:19,255 full_msreid.train INFO: ----------
+2026-04-24 17:18:01,154 full_msreid.train INFO: Epoch[23] Iteration[100/121] Loss: 1.281, Acc: 0.990, Base Lr: 1.09e-04
+2026-04-24 17:18:59,632 full_msreid.train INFO: Epoch 23 done. Time per batch: 339.519[s] Speed: 34.2[samples/s]
+2026-04-24 17:18:59,632 full_msreid.train INFO: ----------
+2026-04-24 17:24:14,272 full_msreid.train INFO: Epoch[24] Iteration[100/122] Loss: 1.258, Acc: 0.989, Base Lr: 1.10e-04
+2026-04-24 17:25:15,305 full_msreid.train INFO: Epoch 24 done. Time per batch: 374.887[s] Speed: 31.2[samples/s]
+2026-04-24 17:25:15,305 full_msreid.train INFO: ----------
+2026-04-24 17:32:05,221 full_msreid.train INFO: Epoch[25] Iteration[100/121] Loss: 1.270, Acc: 0.988, Base Lr: 1.10e-04
+2026-04-24 17:33:05,227 full_msreid.train INFO: Epoch 25 done. Time per batch: 469.166[s] Speed: 24.8[samples/s]
+2026-04-24 17:33:05,227 full_msreid.train INFO: ----------
+2026-04-24 17:37:55,820 full_msreid.train INFO: Epoch[26] Iteration[100/122] Loss: 1.268, Acc: 0.990, Base Lr: 1.10e-04
+2026-04-24 17:39:03,292 full_msreid.train INFO: Epoch 26 done. Time per batch: 357.339[s] Speed: 32.8[samples/s]
+2026-04-24 17:39:03,292 full_msreid.train INFO: ----------
+2026-04-24 17:44:01,497 full_msreid.train INFO: Epoch[27] Iteration[100/122] Loss: 1.263, Acc: 0.991, Base Lr: 1.11e-04
+2026-04-24 17:45:22,257 full_msreid.train INFO: Epoch 27 done. Time per batch: 378.137[s] Speed: 31.0[samples/s]
+2026-04-24 17:45:22,267 full_msreid.train INFO: ----------
+2026-04-24 17:50:38,854 full_msreid.train INFO: Epoch[28] Iteration[100/122] Loss: 1.253, Acc: 0.992, Base Lr: 1.11e-04
+2026-04-24 17:51:41,187 full_msreid.train INFO: Epoch 28 done. Time per batch: 378.216[s] Speed: 31.0[samples/s]
+2026-04-24 17:51:41,188 full_msreid.train INFO: ----------
+2026-04-24 17:56:30,157 full_msreid.train INFO: Epoch[29] Iteration[100/121] Loss: 1.252, Acc: 0.990, Base Lr: 1.12e-04
+2026-04-24 17:57:29,940 full_msreid.train INFO: Epoch 29 done. Time per batch: 348.059[s] Speed: 33.4[samples/s]
+2026-04-24 17:57:29,941 full_msreid.train INFO: ----------
+2026-04-24 18:02:18,328 full_msreid.train INFO: Epoch[30] Iteration[100/122] Loss: 1.202, Acc: 0.993, Base Lr: 1.12e-05
+2026-04-24 18:03:21,499 full_msreid.train INFO: Epoch 30 done. Time per batch: 349.935[s] Speed: 33.5[samples/s]
+2026-04-24 18:03:21,499 full_msreid.train INFO: ----------
+2026-04-24 18:04:51,315 full_msreid.train INFO: Validation Results - Epoch: 30
+2026-04-24 18:04:51,317 full_msreid.train INFO: mAP: 73.9%
+2026-04-24 18:04:51,317 full_msreid.train INFO: CMC curve, Rank-1  :89.4%
+2026-04-24 18:04:51,321 full_msreid.train INFO: CMC curve, Rank-5  :96.2%
+2026-04-24 18:04:51,321 full_msreid.train INFO: CMC curve, Rank-10 :97.9%
+2026-04-24 18:09:39,242 full_msreid.train INFO: Epoch[31] Iteration[100/121] Loss: 1.159, Acc: 0.996, Base Lr: 1.12e-05
+2026-04-24 18:10:38,698 full_msreid.train INFO: Epoch 31 done. Time per batch: 346.713[s] Speed: 33.5[samples/s]
+2026-04-24 18:10:38,699 full_msreid.train INFO: ----------
+2026-04-24 18:15:26,425 full_msreid.train INFO: Epoch[32] Iteration[100/121] Loss: 1.156, Acc: 0.996, Base Lr: 1.13e-05
+2026-04-24 18:16:26,572 full_msreid.train INFO: Epoch 32 done. Time per batch: 347.195[s] Speed: 33.5[samples/s]
+2026-04-24 18:16:26,573 full_msreid.train INFO: ----------
+2026-04-24 18:21:15,061 full_msreid.train INFO: Epoch[33] Iteration[100/122] Loss: 1.144, Acc: 0.998, Base Lr: 1.13e-05
+2026-04-24 18:22:17,597 full_msreid.train INFO: Epoch 33 done. Time per batch: 350.337[s] Speed: 33.4[samples/s]
+2026-04-24 18:22:17,598 full_msreid.train INFO: ----------
+2026-04-24 18:27:06,172 full_msreid.train INFO: Epoch[34] Iteration[100/122] Loss: 1.146, Acc: 0.998, Base Lr: 1.14e-05
+2026-04-24 18:28:08,511 full_msreid.train INFO: Epoch 34 done. Time per batch: 350.204[s] Speed: 33.4[samples/s]
+2026-04-24 18:28:08,512 full_msreid.train INFO: ----------
+2026-04-24 18:32:56,333 full_msreid.train INFO: Epoch[35] Iteration[100/122] Loss: 1.145, Acc: 0.997, Base Lr: 1.14e-05
+2026-04-24 18:33:58,556 full_msreid.train INFO: Epoch 35 done. Time per batch: 349.357[s] Speed: 33.5[samples/s]
+2026-04-24 18:33:58,557 full_msreid.train INFO: ----------
+2026-04-24 18:38:47,375 full_msreid.train INFO: Epoch[36] Iteration[100/122] Loss: 1.142, Acc: 0.997, Base Lr: 1.14e-05
+2026-04-24 18:39:49,685 full_msreid.train INFO: Epoch 36 done. Time per batch: 350.435[s] Speed: 33.4[samples/s]
+2026-04-24 18:39:49,686 full_msreid.train INFO: ----------
+2026-04-24 18:44:38,328 full_msreid.train INFO: Epoch[37] Iteration[100/122] Loss: 1.131, Acc: 0.997, Base Lr: 1.15e-05
+2026-04-24 18:45:40,535 full_msreid.train INFO: Epoch 37 done. Time per batch: 350.143[s] Speed: 33.4[samples/s]
+2026-04-24 18:45:40,536 full_msreid.train INFO: ----------
+2026-04-24 18:50:28,711 full_msreid.train INFO: Epoch[38] Iteration[100/121] Loss: 1.128, Acc: 0.997, Base Lr: 1.15e-05
+2026-04-24 18:51:28,255 full_msreid.train INFO: Epoch 38 done. Time per batch: 347.021[s] Speed: 33.5[samples/s]
+2026-04-24 18:51:28,256 full_msreid.train INFO: ----------
+2026-04-24 18:56:16,465 full_msreid.train INFO: Epoch[39] Iteration[100/122] Loss: 1.127, Acc: 0.998, Base Lr: 1.16e-05
+2026-04-24 18:57:19,383 full_msreid.train INFO: Epoch 39 done. Time per batch: 350.448[s] Speed: 33.4[samples/s]
+2026-04-24 18:57:19,384 full_msreid.train INFO: ----------
+2026-04-24 19:02:07,921 full_msreid.train INFO: Epoch[40] Iteration[100/121] Loss: 1.126, Acc: 0.998, Base Lr: 1.16e-05
+2026-04-24 19:03:08,419 full_msreid.train INFO: Epoch 40 done. Time per batch: 347.352[s] Speed: 33.4[samples/s]
+2026-04-24 19:03:08,420 full_msreid.train INFO: ----------
+2026-04-24 19:04:38,115 full_msreid.train INFO: Validation Results - Epoch: 40
+2026-04-24 19:04:38,116 full_msreid.train INFO: mAP: 75.5%
+2026-04-24 19:04:38,116 full_msreid.train INFO: CMC curve, Rank-1  :90.9%
+2026-04-24 19:04:38,117 full_msreid.train INFO: CMC curve, Rank-5  :97.1%
+2026-04-24 19:04:38,118 full_msreid.train INFO: CMC curve, Rank-10 :98.3%
+2026-04-24 19:09:26,705 full_msreid.train INFO: Epoch[41] Iteration[100/122] Loss: 1.121, Acc: 0.998, Base Lr: 1.16e-05
+2026-04-24 19:10:29,211 full_msreid.train INFO: Epoch 41 done. Time per batch: 350.423[s] Speed: 33.4[samples/s]
+2026-04-24 19:10:29,212 full_msreid.train INFO: ----------
+2026-04-24 19:15:17,191 full_msreid.train INFO: Epoch[42] Iteration[100/122] Loss: 1.127, Acc: 0.997, Base Lr: 1.17e-05
+2026-04-24 19:16:19,619 full_msreid.train INFO: Epoch 42 done. Time per batch: 349.721[s] Speed: 33.5[samples/s]
+2026-04-24 19:16:19,619 full_msreid.train INFO: ----------
+2026-04-24 19:21:08,192 full_msreid.train INFO: Epoch[43] Iteration[100/121] Loss: 1.116, Acc: 0.998, Base Lr: 1.17e-05
+2026-04-24 19:22:07,697 full_msreid.train INFO: Epoch 43 done. Time per batch: 347.393[s] Speed: 33.4[samples/s]
+2026-04-24 19:22:07,698 full_msreid.train INFO: ----------
+2026-04-24 19:26:56,179 full_msreid.train INFO: Epoch[44] Iteration[100/121] Loss: 1.113, Acc: 0.999, Base Lr: 1.18e-05
+2026-04-24 19:27:55,542 full_msreid.train INFO: Epoch 44 done. Time per batch: 347.160[s] Speed: 33.5[samples/s]
+2026-04-24 19:27:55,543 full_msreid.train INFO: ----------
+2026-04-24 19:32:43,608 full_msreid.train INFO: Epoch[45] Iteration[100/122] Loss: 1.116, Acc: 0.997, Base Lr: 1.18e-05
+2026-04-24 19:33:45,937 full_msreid.train INFO: Epoch 45 done. Time per batch: 349.702[s] Speed: 33.5[samples/s]
+2026-04-24 19:33:45,938 full_msreid.train INFO: ----------
+2026-04-24 19:38:34,425 full_msreid.train INFO: Epoch[46] Iteration[100/121] Loss: 1.114, Acc: 0.998, Base Lr: 1.18e-05
+2026-04-24 19:39:33,895 full_msreid.train INFO: Epoch 46 done. Time per batch: 347.277[s] Speed: 33.4[samples/s]
+2026-04-24 19:39:33,895 full_msreid.train INFO: ----------
+2026-04-24 19:44:22,101 full_msreid.train INFO: Epoch[47] Iteration[100/121] Loss: 1.119, Acc: 0.998, Base Lr: 1.19e-05
+2026-04-24 19:45:21,532 full_msreid.train INFO: Epoch 47 done. Time per batch: 346.948[s] Speed: 33.5[samples/s]
+2026-04-24 19:45:21,533 full_msreid.train INFO: ----------
+2026-04-24 19:50:09,938 full_msreid.train INFO: Epoch[48] Iteration[100/121] Loss: 1.117, Acc: 0.998, Base Lr: 1.19e-05
+2026-04-24 19:51:09,375 full_msreid.train INFO: Epoch 48 done. Time per batch: 347.156[s] Speed: 33.5[samples/s]
+2026-04-24 19:51:09,375 full_msreid.train INFO: ----------
+2026-04-24 19:55:57,499 full_msreid.train INFO: Epoch[49] Iteration[100/121] Loss: 1.110, Acc: 0.998, Base Lr: 1.20e-05
+2026-04-24 19:56:57,596 full_msreid.train INFO: Epoch 49 done. Time per batch: 347.527[s] Speed: 33.4[samples/s]
+2026-04-24 19:56:57,596 full_msreid.train INFO: ----------
+2026-04-24 20:01:44,650 full_msreid.train INFO: Epoch[50] Iteration[100/122] Loss: 1.107, Acc: 0.999, Base Lr: 1.20e-06
+2026-04-24 20:02:47,689 full_msreid.train INFO: Epoch 50 done. Time per batch: 347.875[s] Speed: 33.7[samples/s]
+2026-04-24 20:02:47,690 full_msreid.train INFO: ----------
+2026-04-24 20:04:17,389 full_msreid.train INFO: Validation Results - Epoch: 50
+2026-04-24 20:04:17,390 full_msreid.train INFO: mAP: 76.2%
+2026-04-24 20:04:17,391 full_msreid.train INFO: CMC curve, Rank-1  :91.0%
+2026-04-24 20:04:17,391 full_msreid.train INFO: CMC curve, Rank-5  :97.3%
+2026-04-24 20:04:17,392 full_msreid.train INFO: CMC curve, Rank-10 :98.3%
+2026-04-24 20:09:02,722 full_msreid.train INFO: Epoch[51] Iteration[100/121] Loss: 1.109, Acc: 0.997, Base Lr: 1.20e-06
+2026-04-24 20:10:01,481 full_msreid.train INFO: Epoch 51 done. Time per batch: 343.414[s] Speed: 33.8[samples/s]
+2026-04-24 20:10:01,482 full_msreid.train INFO: ----------
+2026-04-24 20:14:46,201 full_msreid.train INFO: Epoch[52] Iteration[100/121] Loss: 1.108, Acc: 0.998, Base Lr: 1.21e-06
+2026-04-24 20:15:44,978 full_msreid.train INFO: Epoch 52 done. Time per batch: 342.813[s] Speed: 33.9[samples/s]
+2026-04-24 20:15:44,979 full_msreid.train INFO: ----------
+2026-04-24 20:20:30,126 full_msreid.train INFO: Epoch[53] Iteration[100/122] Loss: 1.100, Acc: 0.999, Base Lr: 1.21e-06
+2026-04-24 20:21:37,115 full_msreid.train INFO: Epoch 53 done. Time per batch: 351.457[s] Speed: 33.3[samples/s]
+2026-04-24 20:21:37,116 full_msreid.train INFO: ----------
+2026-04-24 20:26:34,387 full_msreid.train INFO: Epoch[54] Iteration[100/122] Loss: 1.112, Acc: 0.997, Base Lr: 1.22e-06
+2026-04-24 20:27:36,265 full_msreid.train INFO: Epoch 54 done. Time per batch: 358.439[s] Speed: 32.7[samples/s]
+2026-04-24 20:27:36,265 full_msreid.train INFO: ----------
+2026-04-24 20:32:36,238 full_msreid.train INFO: Epoch[55] Iteration[100/121] Loss: 1.105, Acc: 0.998, Base Lr: 1.22e-06
+2026-04-24 20:33:40,180 full_msreid.train INFO: Epoch 55 done. Time per batch: 363.136[s] Speed: 32.0[samples/s]
+2026-04-24 20:33:40,181 full_msreid.train INFO: ----------
+2026-04-24 20:38:53,051 full_msreid.train INFO: Epoch[56] Iteration[100/121] Loss: 1.102, Acc: 0.998, Base Lr: 1.22e-06
+2026-04-24 20:39:59,118 full_msreid.train INFO: Epoch 56 done. Time per batch: 377.988[s] Speed: 30.7[samples/s]
+2026-04-24 20:39:59,122 full_msreid.train INFO: ----------
+2026-04-24 20:45:13,475 full_msreid.train INFO: Epoch[57] Iteration[100/121] Loss: 1.098, Acc: 0.999, Base Lr: 1.23e-06
+2026-04-24 20:46:17,400 full_msreid.train INFO: Epoch 57 done. Time per batch: 377.378[s] Speed: 30.8[samples/s]
+2026-04-24 20:46:17,401 full_msreid.train INFO: ----------
+2026-04-24 20:51:26,574 full_msreid.train INFO: Epoch[58] Iteration[100/121] Loss: 1.102, Acc: 0.998, Base Lr: 1.23e-06
+2026-04-24 20:52:30,737 full_msreid.train INFO: Epoch 58 done. Time per batch: 372.431[s] Speed: 31.2[samples/s]
+2026-04-24 20:52:30,738 full_msreid.train INFO: ----------
+2026-04-24 20:57:39,780 full_msreid.train INFO: Epoch[59] Iteration[100/122] Loss: 1.103, Acc: 0.999, Base Lr: 1.24e-06
+2026-04-24 20:58:46,527 full_msreid.train INFO: Epoch 59 done. Time per batch: 374.894[s] Speed: 31.2[samples/s]
+2026-04-24 20:58:46,528 full_msreid.train INFO: ----------
+2026-04-24 21:03:54,697 full_msreid.train INFO: Epoch[60] Iteration[100/121] Loss: 1.110, Acc: 0.999, Base Lr: 1.24e-06
+2026-04-24 21:05:00,014 full_msreid.train INFO: Epoch 60 done. Time per batch: 371.218[s] Speed: 31.3[samples/s]
+2026-04-24 21:05:00,015 full_msreid.train INFO: ----------
+2026-04-24 21:06:57,436 full_msreid.train INFO: Validation Results - Epoch: 60
+2026-04-24 21:06:57,437 full_msreid.train INFO: mAP: 76.5%
+2026-04-24 21:06:57,437 full_msreid.train INFO: CMC curve, Rank-1  :91.3%
+2026-04-24 21:06:57,438 full_msreid.train INFO: CMC curve, Rank-5  :97.0%
+2026-04-24 21:06:57,440 full_msreid.train INFO: CMC curve, Rank-10 :98.2%

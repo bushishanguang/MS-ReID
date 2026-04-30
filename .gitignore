@@ -7,3 +7,4 @@ __pycache__/
 
 core/storage/datasets/market1501/
 core/storage/datasets/dukemtmc-reid/
+docs/

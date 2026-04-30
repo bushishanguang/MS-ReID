@@ -1,0 +1,285 @@
+2026-04-24 07:01:06,896 wavelet_multiscale INFO: Using 1 GPUS
+2026-04-24 07:01:06,896 wavelet_multiscale INFO: Namespace(config_file='./core/configs/exp4_wavelet_multiscale.yml', opts=['DATASETS.NAMES', "('market1501',)", 'OUTPUT_DIR', './core/storage/outputs/wavelet_multiscale/train/market1501'])
+2026-04-24 07:01:06,896 wavelet_multiscale INFO: Loaded configuration file ./core/configs/exp4_wavelet_multiscale.yml
+2026-04-24 07:01:06,896 wavelet_multiscale INFO: 
+MODEL:
+  USE_WAVELET: true
+  USE_MULTISCALE_BRANCH: true
+  USE_ATTENTION_FUSION: false
+  RETURN_VISUALS: false
+
+2026-04-24 07:01:06,896 wavelet_multiscale INFO: Running with config:
+DATALOADER:
+  NUM_INSTANCE: 4
+  NUM_WORKERS: 4
+  SAMPLER: softmax_triplet
+DATASETS:
+  NAMES: ('market1501',)
+  ROOT_DIR: ./core/storage/datasets
+INPUT:
+  PADDING: 10
+  PIXEL_MEAN: [0.485, 0.456, 0.406]
+  PIXEL_STD: [0.229, 0.224, 0.225]
+  PROB: 0.5
+  RE_PROB: 0.5
+  SIZE_TEST: [256, 128]
+  SIZE_TRAIN: [256, 128]
+MODEL:
+  DEVICE: cuda
+  DEVICE_ID: 0
+  IF_LABELSMOOTH: on
+  IF_WITH_CENTER: no
+  LAST_STRIDE: 1
+  METRIC_LOSS_TYPE: triplet
+  NAME: resnet50
+  NECK: bnneck
+  PRETRAIN_CHOICE: imagenet
+  PRETRAIN_PATH: ./core/storage/datasets/pretrained/resnet50-19c8e357.pth
+  RETURN_VISUALS: False
+  USE_ATTENTION_FUSION: False
+  USE_MULTISCALE_BRANCH: True
+  USE_WAVELET: True
+OUTPUT_DIR: ./core/storage/outputs/wavelet_multiscale/train/market1501
+SOLVER:
+  BASE_LR: 0.0003
+  BIAS_LR_FACTOR: 2
+  CENTER_LOSS_WEIGHT: 0.0005
+  CENTER_LR: 0.5
+  CHECKPOINT_PERIOD: 10
+  CLUSTER_MARGIN: 0.3
+  EVAL_PERIOD: 10
+  GAMMA: 0.1
+  IMS_PER_BATCH: 96
+  LOG_PERIOD: 100
+  MARGIN: 0.3
+  MAX_EPOCHS: 60
+  MOMENTUM: 0.9
+  OPTIMIZER_NAME: Adam
+  RANGE_ALPHA: 0
+  RANGE_BETA: 1
+  RANGE_K: 2
+  RANGE_LOSS_WEIGHT: 1
+  RANGE_MARGIN: 0.3
+  STEPS: (30, 50)
+  WARMUP_FACTOR: 0.3333333333333333
+  WARMUP_ITERS: 500
+  WARMUP_METHOD: linear
+  WEIGHT_DECAY: 0.0005
+  WEIGHT_DECAY_BIAS: 0.0
+TEST:
+  FEAT_NORM: yes
+  IMS_PER_BATCH: 64
+  NECK_FEAT: after
+  RE_RANKING: no
+  WEIGHT: 
+2026-04-24 07:01:07,686 wavelet_multiscale.train INFO: Start training
+2026-04-24 07:03:01,929 wavelet_multiscale.train INFO: Epoch[1] Iteration[100/121] Loss: 7.727, Acc: 0.039, Base Lr: 1.00e-04
+2026-04-24 07:03:23,321 wavelet_multiscale.train INFO: Epoch 1 done. Time per batch: 134.818[s] Speed: 86.2[samples/s]
+2026-04-24 07:03:23,321 wavelet_multiscale.train INFO: ----------
+2026-04-24 07:05:10,237 wavelet_multiscale.train INFO: Epoch[2] Iteration[100/122] Loss: 5.951, Acc: 0.118, Base Lr: 1.01e-04
+2026-04-24 07:05:32,666 wavelet_multiscale.train INFO: Epoch 2 done. Time per batch: 128.680[s] Speed: 91.0[samples/s]
+2026-04-24 07:05:32,666 wavelet_multiscale.train INFO: ----------
+2026-04-24 07:07:19,288 wavelet_multiscale.train INFO: Epoch[3] Iteration[100/121] Loss: 4.938, Acc: 0.262, Base Lr: 1.01e-04
+2026-04-24 07:07:40,694 wavelet_multiscale.train INFO: Epoch 3 done. Time per batch: 127.342[s] Speed: 91.2[samples/s]
+2026-04-24 07:07:40,694 wavelet_multiscale.train INFO: ----------
+2026-04-24 07:09:27,306 wavelet_multiscale.train INFO: Epoch[4] Iteration[100/122] Loss: 4.140, Acc: 0.390, Base Lr: 1.02e-04
+2026-04-24 07:09:49,724 wavelet_multiscale.train INFO: Epoch 4 done. Time per batch: 128.359[s] Speed: 91.2[samples/s]
+2026-04-24 07:09:49,725 wavelet_multiscale.train INFO: ----------
+2026-04-24 07:11:36,588 wavelet_multiscale.train INFO: Epoch[5] Iteration[100/121] Loss: 3.449, Acc: 0.553, Base Lr: 1.02e-04
+2026-04-24 07:11:57,916 wavelet_multiscale.train INFO: Epoch 5 done. Time per batch: 127.543[s] Speed: 91.1[samples/s]
+2026-04-24 07:11:57,916 wavelet_multiscale.train INFO: ----------
+2026-04-24 07:13:44,352 wavelet_multiscale.train INFO: Epoch[6] Iteration[100/121] Loss: 2.878, Acc: 0.686, Base Lr: 1.02e-04
+2026-04-24 07:14:05,740 wavelet_multiscale.train INFO: Epoch 6 done. Time per batch: 127.161[s] Speed: 91.3[samples/s]
+2026-04-24 07:14:05,740 wavelet_multiscale.train INFO: ----------
+2026-04-24 07:15:52,554 wavelet_multiscale.train INFO: Epoch[7] Iteration[100/122] Loss: 2.492, Acc: 0.760, Base Lr: 1.03e-04
+2026-04-24 07:16:14,939 wavelet_multiscale.train INFO: Epoch 7 done. Time per batch: 128.518[s] Speed: 91.1[samples/s]
+2026-04-24 07:16:14,939 wavelet_multiscale.train INFO: ----------
+2026-04-24 07:18:01,820 wavelet_multiscale.train INFO: Epoch[8] Iteration[100/121] Loss: 2.232, Acc: 0.819, Base Lr: 1.03e-04
+2026-04-24 07:18:23,264 wavelet_multiscale.train INFO: Epoch 8 done. Time per batch: 127.647[s] Speed: 91.0[samples/s]
+2026-04-24 07:18:23,264 wavelet_multiscale.train INFO: ----------
+2026-04-24 07:20:09,979 wavelet_multiscale.train INFO: Epoch[9] Iteration[100/121] Loss: 2.051, Acc: 0.851, Base Lr: 1.04e-04
+2026-04-24 07:20:31,368 wavelet_multiscale.train INFO: Epoch 9 done. Time per batch: 127.421[s] Speed: 91.2[samples/s]
+2026-04-24 07:20:31,368 wavelet_multiscale.train INFO: ----------
+2026-04-24 07:22:17,710 wavelet_multiscale.train INFO: Epoch[10] Iteration[100/122] Loss: 1.841, Acc: 0.908, Base Lr: 1.04e-04
+2026-04-24 07:22:41,104 wavelet_multiscale.train INFO: Epoch 10 done. Time per batch: 128.082[s] Speed: 91.4[samples/s]
+2026-04-24 07:22:41,104 wavelet_multiscale.train INFO: ----------
+2026-04-24 07:24:13,468 wavelet_multiscale.train INFO: Validation Results - Epoch: 10
+2026-04-24 07:24:13,469 wavelet_multiscale.train INFO: mAP: 57.8%
+2026-04-24 07:24:13,469 wavelet_multiscale.train INFO: CMC curve, Rank-1  :77.9%
+2026-04-24 07:24:13,469 wavelet_multiscale.train INFO: CMC curve, Rank-5  :92.0%
+2026-04-24 07:24:13,469 wavelet_multiscale.train INFO: CMC curve, Rank-10 :95.0%
+2026-04-24 07:27:35,865 wavelet_multiscale.train INFO: Epoch[11] Iteration[100/121] Loss: 1.766, Acc: 0.914, Base Lr: 1.04e-04
+2026-04-24 07:28:17,042 wavelet_multiscale.train INFO: Epoch 11 done. Time per batch: 242.885[s] Speed: 47.8[samples/s]
+2026-04-24 07:28:17,042 wavelet_multiscale.train INFO: ----------
+2026-04-24 07:31:38,187 wavelet_multiscale.train INFO: Epoch[12] Iteration[100/121] Loss: 1.676, Acc: 0.930, Base Lr: 1.05e-04
+2026-04-24 07:32:19,366 wavelet_multiscale.train INFO: Epoch 12 done. Time per batch: 241.657[s] Speed: 48.1[samples/s]
+2026-04-24 07:32:19,366 wavelet_multiscale.train INFO: ----------
+2026-04-24 07:35:40,542 wavelet_multiscale.train INFO: Epoch[13] Iteration[100/122] Loss: 1.602, Acc: 0.947, Base Lr: 1.05e-04
+2026-04-24 07:36:23,759 wavelet_multiscale.train INFO: Epoch 13 done. Time per batch: 243.719[s] Speed: 48.1[samples/s]
+2026-04-24 07:36:23,759 wavelet_multiscale.train INFO: ----------
+2026-04-24 07:39:44,687 wavelet_multiscale.train INFO: Epoch[14] Iteration[100/121] Loss: 1.535, Acc: 0.963, Base Lr: 1.06e-04
+2026-04-24 07:40:25,909 wavelet_multiscale.train INFO: Epoch 14 done. Time per batch: 241.460[s] Speed: 48.1[samples/s]
+2026-04-24 07:40:25,909 wavelet_multiscale.train INFO: ----------
+2026-04-24 07:43:46,853 wavelet_multiscale.train INFO: Epoch[15] Iteration[100/121] Loss: 1.469, Acc: 0.971, Base Lr: 1.06e-04
+2026-04-24 07:44:28,046 wavelet_multiscale.train INFO: Epoch 15 done. Time per batch: 241.464[s] Speed: 48.1[samples/s]
+2026-04-24 07:44:28,046 wavelet_multiscale.train INFO: ----------
+2026-04-24 07:47:49,140 wavelet_multiscale.train INFO: Epoch[16] Iteration[100/122] Loss: 1.464, Acc: 0.965, Base Lr: 1.06e-04
+2026-04-24 07:48:32,418 wavelet_multiscale.train INFO: Epoch 16 done. Time per batch: 243.696[s] Speed: 48.1[samples/s]
+2026-04-24 07:48:32,418 wavelet_multiscale.train INFO: ----------
+2026-04-24 07:51:53,305 wavelet_multiscale.train INFO: Epoch[17] Iteration[100/121] Loss: 1.428, Acc: 0.969, Base Lr: 1.07e-04
+2026-04-24 07:52:34,552 wavelet_multiscale.train INFO: Epoch 17 done. Time per batch: 241.444[s] Speed: 48.1[samples/s]
+2026-04-24 07:52:34,552 wavelet_multiscale.train INFO: ----------
+2026-04-24 07:55:55,535 wavelet_multiscale.train INFO: Epoch[18] Iteration[100/121] Loss: 1.441, Acc: 0.972, Base Lr: 1.07e-04
+2026-04-24 07:56:36,782 wavelet_multiscale.train INFO: Epoch 18 done. Time per batch: 241.556[s] Speed: 48.1[samples/s]
+2026-04-24 07:56:36,782 wavelet_multiscale.train INFO: ----------
+2026-04-24 07:59:57,937 wavelet_multiscale.train INFO: Epoch[19] Iteration[100/121] Loss: 1.409, Acc: 0.972, Base Lr: 1.08e-04
+2026-04-24 08:00:39,160 wavelet_multiscale.train INFO: Epoch 19 done. Time per batch: 241.705[s] Speed: 48.1[samples/s]
+2026-04-24 08:00:39,160 wavelet_multiscale.train INFO: ----------
+2026-04-24 08:03:59,903 wavelet_multiscale.train INFO: Epoch[20] Iteration[100/122] Loss: 1.360, Acc: 0.985, Base Lr: 1.08e-04
+2026-04-24 08:04:43,986 wavelet_multiscale.train INFO: Epoch 20 done. Time per batch: 243.210[s] Speed: 48.2[samples/s]
+2026-04-24 08:04:43,986 wavelet_multiscale.train INFO: ----------
+2026-04-24 08:06:35,289 wavelet_multiscale.train INFO: Validation Results - Epoch: 20
+2026-04-24 08:06:35,289 wavelet_multiscale.train INFO: mAP: 60.8%
+2026-04-24 08:06:35,289 wavelet_multiscale.train INFO: CMC curve, Rank-1  :82.0%
+2026-04-24 08:06:35,289 wavelet_multiscale.train INFO: CMC curve, Rank-5  :92.8%
+2026-04-24 08:06:35,289 wavelet_multiscale.train INFO: CMC curve, Rank-10 :95.6%
+2026-04-24 08:09:56,015 wavelet_multiscale.train INFO: Epoch[21] Iteration[100/122] Loss: 1.393, Acc: 0.981, Base Lr: 1.08e-04
+2026-04-24 08:10:39,239 wavelet_multiscale.train INFO: Epoch 21 done. Time per batch: 243.293[s] Speed: 48.1[samples/s]
+2026-04-24 08:10:39,239 wavelet_multiscale.train INFO: ----------
+2026-04-24 08:14:00,371 wavelet_multiscale.train INFO: Epoch[22] Iteration[100/121] Loss: 1.352, Acc: 0.982, Base Lr: 1.09e-04
+2026-04-24 08:14:41,643 wavelet_multiscale.train INFO: Epoch 22 done. Time per batch: 241.708[s] Speed: 48.1[samples/s]
+2026-04-24 08:14:41,643 wavelet_multiscale.train INFO: ----------
+2026-04-24 08:18:02,678 wavelet_multiscale.train INFO: Epoch[23] Iteration[100/121] Loss: 1.359, Acc: 0.985, Base Lr: 1.09e-04
+2026-04-24 08:18:43,932 wavelet_multiscale.train INFO: Epoch 23 done. Time per batch: 241.623[s] Speed: 48.1[samples/s]
+2026-04-24 08:18:43,932 wavelet_multiscale.train INFO: ----------
+2026-04-24 08:22:04,891 wavelet_multiscale.train INFO: Epoch[24] Iteration[100/122] Loss: 1.323, Acc: 0.984, Base Lr: 1.10e-04
+2026-04-24 08:22:48,051 wavelet_multiscale.train INFO: Epoch 24 done. Time per batch: 243.437[s] Speed: 48.1[samples/s]
+2026-04-24 08:22:48,051 wavelet_multiscale.train INFO: ----------
+2026-04-24 08:26:08,904 wavelet_multiscale.train INFO: Epoch[25] Iteration[100/121] Loss: 1.318, Acc: 0.982, Base Lr: 1.10e-04
+2026-04-24 08:26:50,209 wavelet_multiscale.train INFO: Epoch 25 done. Time per batch: 241.496[s] Speed: 48.1[samples/s]
+2026-04-24 08:26:50,210 wavelet_multiscale.train INFO: ----------
+2026-04-24 08:30:11,297 wavelet_multiscale.train INFO: Epoch[26] Iteration[100/121] Loss: 1.297, Acc: 0.987, Base Lr: 1.10e-04
+2026-04-24 08:30:52,474 wavelet_multiscale.train INFO: Epoch 26 done. Time per batch: 241.587[s] Speed: 48.1[samples/s]
+2026-04-24 08:30:52,474 wavelet_multiscale.train INFO: ----------
+2026-04-24 08:34:13,482 wavelet_multiscale.train INFO: Epoch[27] Iteration[100/122] Loss: 1.319, Acc: 0.984, Base Lr: 1.11e-04
+2026-04-24 08:34:56,607 wavelet_multiscale.train INFO: Epoch 27 done. Time per batch: 243.460[s] Speed: 48.1[samples/s]
+2026-04-24 08:34:56,607 wavelet_multiscale.train INFO: ----------
+2026-04-24 08:38:17,563 wavelet_multiscale.train INFO: Epoch[28] Iteration[100/121] Loss: 1.286, Acc: 0.987, Base Lr: 1.11e-04
+2026-04-24 08:38:58,808 wavelet_multiscale.train INFO: Epoch 28 done. Time per batch: 241.528[s] Speed: 48.1[samples/s]
+2026-04-24 08:38:58,808 wavelet_multiscale.train INFO: ----------
+2026-04-24 08:42:19,960 wavelet_multiscale.train INFO: Epoch[29] Iteration[100/121] Loss: 1.302, Acc: 0.985, Base Lr: 1.12e-04
+2026-04-24 08:43:01,216 wavelet_multiscale.train INFO: Epoch 29 done. Time per batch: 241.715[s] Speed: 48.1[samples/s]
+2026-04-24 08:43:01,216 wavelet_multiscale.train INFO: ----------
+2026-04-24 08:46:22,264 wavelet_multiscale.train INFO: Epoch[30] Iteration[100/122] Loss: 1.241, Acc: 0.992, Base Lr: 1.12e-05
+2026-04-24 08:47:06,361 wavelet_multiscale.train INFO: Epoch 30 done. Time per batch: 243.524[s] Speed: 48.1[samples/s]
+2026-04-24 08:47:06,361 wavelet_multiscale.train INFO: ----------
+2026-04-24 08:48:57,409 wavelet_multiscale.train INFO: Validation Results - Epoch: 30
+2026-04-24 08:48:57,409 wavelet_multiscale.train INFO: mAP: 66.6%
+2026-04-24 08:48:57,409 wavelet_multiscale.train INFO: CMC curve, Rank-1  :85.6%
+2026-04-24 08:48:57,409 wavelet_multiscale.train INFO: CMC curve, Rank-5  :95.1%
+2026-04-24 08:48:57,409 wavelet_multiscale.train INFO: CMC curve, Rank-10 :97.1%
+2026-04-24 08:52:18,468 wavelet_multiscale.train INFO: Epoch[31] Iteration[100/122] Loss: 1.203, Acc: 0.994, Base Lr: 1.12e-05
+2026-04-24 08:53:01,896 wavelet_multiscale.train INFO: Epoch 31 done. Time per batch: 243.836[s] Speed: 48.0[samples/s]
+2026-04-24 08:53:01,896 wavelet_multiscale.train INFO: ----------
+2026-04-24 08:56:23,038 wavelet_multiscale.train INFO: Epoch[32] Iteration[100/121] Loss: 1.186, Acc: 0.996, Base Lr: 1.13e-05
+2026-04-24 08:57:04,261 wavelet_multiscale.train INFO: Epoch 32 done. Time per batch: 241.699[s] Speed: 48.1[samples/s]
+2026-04-24 08:57:04,261 wavelet_multiscale.train INFO: ----------
+2026-04-24 09:00:25,550 wavelet_multiscale.train INFO: Epoch[33] Iteration[100/121] Loss: 1.192, Acc: 0.993, Base Lr: 1.13e-05
+2026-04-24 09:01:06,736 wavelet_multiscale.train INFO: Epoch 33 done. Time per batch: 241.823[s] Speed: 48.0[samples/s]
+2026-04-24 09:01:06,736 wavelet_multiscale.train INFO: ----------
+2026-04-24 09:04:27,595 wavelet_multiscale.train INFO: Epoch[34] Iteration[100/121] Loss: 1.183, Acc: 0.991, Base Lr: 1.14e-05
+2026-04-24 09:05:08,825 wavelet_multiscale.train INFO: Epoch 34 done. Time per batch: 241.423[s] Speed: 48.1[samples/s]
+2026-04-24 09:05:08,825 wavelet_multiscale.train INFO: ----------
+2026-04-24 09:08:29,662 wavelet_multiscale.train INFO: Epoch[35] Iteration[100/121] Loss: 1.167, Acc: 0.997, Base Lr: 1.14e-05
+2026-04-24 09:09:10,781 wavelet_multiscale.train INFO: Epoch 35 done. Time per batch: 241.279[s] Speed: 48.1[samples/s]
+2026-04-24 09:09:10,781 wavelet_multiscale.train INFO: ----------
+2026-04-24 09:12:31,900 wavelet_multiscale.train INFO: Epoch[36] Iteration[100/121] Loss: 1.155, Acc: 0.997, Base Lr: 1.14e-05
+2026-04-24 09:13:13,076 wavelet_multiscale.train INFO: Epoch 36 done. Time per batch: 241.612[s] Speed: 48.1[samples/s]
+2026-04-24 09:13:13,076 wavelet_multiscale.train INFO: ----------
+2026-04-24 09:16:34,062 wavelet_multiscale.train INFO: Epoch[37] Iteration[100/121] Loss: 1.151, Acc: 0.998, Base Lr: 1.15e-05
+2026-04-24 09:17:15,297 wavelet_multiscale.train INFO: Epoch 37 done. Time per batch: 241.506[s] Speed: 48.1[samples/s]
+2026-04-24 09:17:15,297 wavelet_multiscale.train INFO: ----------
+2026-04-24 09:20:36,343 wavelet_multiscale.train INFO: Epoch[38] Iteration[100/122] Loss: 1.156, Acc: 0.998, Base Lr: 1.15e-05
+2026-04-24 09:21:19,511 wavelet_multiscale.train INFO: Epoch 38 done. Time per batch: 243.524[s] Speed: 48.1[samples/s]
+2026-04-24 09:21:19,511 wavelet_multiscale.train INFO: ----------
+2026-04-24 09:24:40,622 wavelet_multiscale.train INFO: Epoch[39] Iteration[100/121] Loss: 1.153, Acc: 0.998, Base Lr: 1.16e-05
+2026-04-24 09:25:21,773 wavelet_multiscale.train INFO: Epoch 39 done. Time per batch: 241.575[s] Speed: 48.1[samples/s]
+2026-04-24 09:25:21,773 wavelet_multiscale.train INFO: ----------
+2026-04-24 09:28:42,759 wavelet_multiscale.train INFO: Epoch[40] Iteration[100/121] Loss: 1.154, Acc: 0.996, Base Lr: 1.16e-05
+2026-04-24 09:29:24,927 wavelet_multiscale.train INFO: Epoch 40 done. Time per batch: 241.499[s] Speed: 48.1[samples/s]
+2026-04-24 09:29:24,927 wavelet_multiscale.train INFO: ----------
+2026-04-24 09:31:16,035 wavelet_multiscale.train INFO: Validation Results - Epoch: 40
+2026-04-24 09:31:16,035 wavelet_multiscale.train INFO: mAP: 68.6%
+2026-04-24 09:31:16,035 wavelet_multiscale.train INFO: CMC curve, Rank-1  :87.4%
+2026-04-24 09:31:16,035 wavelet_multiscale.train INFO: CMC curve, Rank-5  :95.9%
+2026-04-24 09:31:16,035 wavelet_multiscale.train INFO: CMC curve, Rank-10 :97.6%
+2026-04-24 09:34:37,030 wavelet_multiscale.train INFO: Epoch[41] Iteration[100/121] Loss: 1.158, Acc: 0.997, Base Lr: 1.16e-05
+2026-04-24 09:35:18,291 wavelet_multiscale.train INFO: Epoch 41 done. Time per batch: 241.575[s] Speed: 48.1[samples/s]
+2026-04-24 09:35:18,292 wavelet_multiscale.train INFO: ----------
+2026-04-24 09:38:39,382 wavelet_multiscale.train INFO: Epoch[42] Iteration[100/121] Loss: 1.151, Acc: 0.997, Base Lr: 1.17e-05
+2026-04-24 09:39:20,643 wavelet_multiscale.train INFO: Epoch 42 done. Time per batch: 241.681[s] Speed: 48.1[samples/s]
+2026-04-24 09:39:20,644 wavelet_multiscale.train INFO: ----------
+2026-04-24 09:42:41,532 wavelet_multiscale.train INFO: Epoch[43] Iteration[100/121] Loss: 1.148, Acc: 0.996, Base Lr: 1.17e-05
+2026-04-24 09:43:22,791 wavelet_multiscale.train INFO: Epoch 43 done. Time per batch: 241.479[s] Speed: 48.1[samples/s]
+2026-04-24 09:43:22,791 wavelet_multiscale.train INFO: ----------
+2026-04-24 09:46:43,736 wavelet_multiscale.train INFO: Epoch[44] Iteration[100/121] Loss: 1.151, Acc: 0.996, Base Lr: 1.18e-05
+2026-04-24 09:47:24,991 wavelet_multiscale.train INFO: Epoch 44 done. Time per batch: 241.518[s] Speed: 48.1[samples/s]
+2026-04-24 09:47:24,991 wavelet_multiscale.train INFO: ----------
+2026-04-24 09:50:46,123 wavelet_multiscale.train INFO: Epoch[45] Iteration[100/121] Loss: 1.141, Acc: 0.996, Base Lr: 1.18e-05
+2026-04-24 09:51:27,376 wavelet_multiscale.train INFO: Epoch 45 done. Time per batch: 241.704[s] Speed: 48.1[samples/s]
+2026-04-24 09:51:27,376 wavelet_multiscale.train INFO: ----------
+2026-04-24 09:54:48,532 wavelet_multiscale.train INFO: Epoch[46] Iteration[100/121] Loss: 1.142, Acc: 0.998, Base Lr: 1.18e-05
+2026-04-24 09:55:29,749 wavelet_multiscale.train INFO: Epoch 46 done. Time per batch: 241.688[s] Speed: 48.1[samples/s]
+2026-04-24 09:55:29,749 wavelet_multiscale.train INFO: ----------
+2026-04-24 09:58:50,987 wavelet_multiscale.train INFO: Epoch[47] Iteration[100/121] Loss: 1.133, Acc: 0.998, Base Lr: 1.19e-05
+2026-04-24 09:59:32,302 wavelet_multiscale.train INFO: Epoch 47 done. Time per batch: 241.877[s] Speed: 48.0[samples/s]
+2026-04-24 09:59:32,303 wavelet_multiscale.train INFO: ----------
+2026-04-24 10:02:53,826 wavelet_multiscale.train INFO: Epoch[48] Iteration[100/120] Loss: 1.135, Acc: 0.997, Base Lr: 1.19e-05
+2026-04-24 10:03:33,133 wavelet_multiscale.train INFO: Epoch 48 done. Time per batch: 240.152[s] Speed: 48.0[samples/s]
+2026-04-24 10:03:33,133 wavelet_multiscale.train INFO: ----------
+2026-04-24 10:06:54,464 wavelet_multiscale.train INFO: Epoch[49] Iteration[100/121] Loss: 1.140, Acc: 0.998, Base Lr: 1.20e-05
+2026-04-24 10:07:35,635 wavelet_multiscale.train INFO: Epoch 49 done. Time per batch: 241.824[s] Speed: 48.0[samples/s]
+2026-04-24 10:07:35,635 wavelet_multiscale.train INFO: ----------
+2026-04-24 10:10:56,742 wavelet_multiscale.train INFO: Epoch[50] Iteration[100/121] Loss: 1.139, Acc: 0.997, Base Lr: 1.20e-06
+2026-04-24 10:11:38,954 wavelet_multiscale.train INFO: Epoch 50 done. Time per batch: 241.689[s] Speed: 48.1[samples/s]
+2026-04-24 10:11:38,954 wavelet_multiscale.train INFO: ----------
+2026-04-24 10:13:30,087 wavelet_multiscale.train INFO: Validation Results - Epoch: 50
+2026-04-24 10:13:30,088 wavelet_multiscale.train INFO: mAP: 69.4%
+2026-04-24 10:13:30,088 wavelet_multiscale.train INFO: CMC curve, Rank-1  :87.9%
+2026-04-24 10:13:30,088 wavelet_multiscale.train INFO: CMC curve, Rank-5  :95.8%
+2026-04-24 10:13:30,088 wavelet_multiscale.train INFO: CMC curve, Rank-10 :97.6%
+2026-04-24 10:16:51,137 wavelet_multiscale.train INFO: Epoch[51] Iteration[100/121] Loss: 1.123, Acc: 0.998, Base Lr: 1.20e-06
+2026-04-24 10:17:32,471 wavelet_multiscale.train INFO: Epoch 51 done. Time per batch: 241.720[s] Speed: 48.1[samples/s]
+2026-04-24 10:17:32,471 wavelet_multiscale.train INFO: ----------
+2026-04-24 10:20:53,659 wavelet_multiscale.train INFO: Epoch[52] Iteration[100/122] Loss: 1.126, Acc: 0.999, Base Lr: 1.21e-06
+2026-04-24 10:21:36,836 wavelet_multiscale.train INFO: Epoch 52 done. Time per batch: 243.688[s] Speed: 48.1[samples/s]
+2026-04-24 10:21:36,836 wavelet_multiscale.train INFO: ----------
+2026-04-24 10:24:58,044 wavelet_multiscale.train INFO: Epoch[53] Iteration[100/121] Loss: 1.123, Acc: 0.999, Base Lr: 1.21e-06
+2026-04-24 10:25:39,206 wavelet_multiscale.train INFO: Epoch 53 done. Time per batch: 241.704[s] Speed: 48.1[samples/s]
+2026-04-24 10:25:39,206 wavelet_multiscale.train INFO: ----------
+2026-04-24 10:29:00,428 wavelet_multiscale.train INFO: Epoch[54] Iteration[100/122] Loss: 1.120, Acc: 0.998, Base Lr: 1.22e-06
+2026-04-24 10:29:43,656 wavelet_multiscale.train INFO: Epoch 54 done. Time per batch: 243.763[s] Speed: 48.0[samples/s]
+2026-04-24 10:29:43,656 wavelet_multiscale.train INFO: ----------
+2026-04-24 10:33:05,015 wavelet_multiscale.train INFO: Epoch[55] Iteration[100/121] Loss: 1.122, Acc: 0.998, Base Lr: 1.22e-06
+2026-04-24 10:33:46,239 wavelet_multiscale.train INFO: Epoch 55 done. Time per batch: 241.910[s] Speed: 48.0[samples/s]
+2026-04-24 10:33:46,239 wavelet_multiscale.train INFO: ----------
+2026-04-24 10:37:07,466 wavelet_multiscale.train INFO: Epoch[56] Iteration[100/121] Loss: 1.122, Acc: 0.998, Base Lr: 1.22e-06
+2026-04-24 10:37:48,725 wavelet_multiscale.train INFO: Epoch 56 done. Time per batch: 241.809[s] Speed: 48.0[samples/s]
+2026-04-24 10:37:48,725 wavelet_multiscale.train INFO: ----------
+2026-04-24 10:41:09,864 wavelet_multiscale.train INFO: Epoch[57] Iteration[100/121] Loss: 1.122, Acc: 0.998, Base Lr: 1.23e-06
+2026-04-24 10:41:51,045 wavelet_multiscale.train INFO: Epoch 57 done. Time per batch: 241.645[s] Speed: 48.1[samples/s]
+2026-04-24 10:41:51,045 wavelet_multiscale.train INFO: ----------
+2026-04-24 10:45:12,204 wavelet_multiscale.train INFO: Epoch[58] Iteration[100/121] Loss: 1.124, Acc: 0.997, Base Lr: 1.23e-06
+2026-04-24 10:45:53,446 wavelet_multiscale.train INFO: Epoch 58 done. Time per batch: 241.721[s] Speed: 48.1[samples/s]
+2026-04-24 10:45:53,446 wavelet_multiscale.train INFO: ----------
+2026-04-24 10:49:14,724 wavelet_multiscale.train INFO: Epoch[59] Iteration[100/121] Loss: 1.122, Acc: 0.998, Base Lr: 1.24e-06
+2026-04-24 10:49:55,925 wavelet_multiscale.train INFO: Epoch 59 done. Time per batch: 241.801[s] Speed: 48.0[samples/s]
+2026-04-24 10:49:55,925 wavelet_multiscale.train INFO: ----------
+2026-04-24 10:53:17,160 wavelet_multiscale.train INFO: Epoch[60] Iteration[100/121] Loss: 1.122, Acc: 0.998, Base Lr: 1.24e-06
+2026-04-24 10:53:59,375 wavelet_multiscale.train INFO: Epoch 60 done. Time per batch: 241.821[s] Speed: 48.0[samples/s]
+2026-04-24 10:53:59,375 wavelet_multiscale.train INFO: ----------
+2026-04-24 10:55:51,193 wavelet_multiscale.train INFO: Validation Results - Epoch: 60
+2026-04-24 10:55:51,193 wavelet_multiscale.train INFO: mAP: 69.6%
+2026-04-24 10:55:51,193 wavelet_multiscale.train INFO: CMC curve, Rank-1  :88.0%
+2026-04-24 10:55:51,193 wavelet_multiscale.train INFO: CMC curve, Rank-5  :95.8%
+2026-04-24 10:55:51,193 wavelet_multiscale.train INFO: CMC curve, Rank-10 :97.5%

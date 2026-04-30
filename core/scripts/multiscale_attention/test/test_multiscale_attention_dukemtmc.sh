@@ -1,0 +1,1 @@
+uv run python -m core.tools.test --config_file "./core/configs/exp6_multiscale_attention.yml" DATASETS.NAMES "('dukemtmc',)" TEST.WEIGHT "./core/storage/outputs/multiscale_attention/train/dukemtmc/resnet50_model_60.pth" OUTPUT_DIR "./core/storage/outputs/multiscale_attention/test/dukemtmc"

@@ -1,0 +1,285 @@
+2026-04-23 17:39:29,871 wavelet INFO: Using 1 GPUS
+2026-04-23 17:39:29,871 wavelet INFO: Namespace(config_file='./core/configs/exp2_wavelet.yml', opts=['DATASETS.NAMES', "('market1501',)", 'OUTPUT_DIR', './core/storage/outputs/wavelet/train/market1501'])
+2026-04-23 17:39:29,871 wavelet INFO: Loaded configuration file ./core/configs/exp2_wavelet.yml
+2026-04-23 17:39:29,871 wavelet INFO: 
+MODEL:
+  USE_WAVELET: true
+  USE_MULTISCALE_BRANCH: false
+  USE_ATTENTION_FUSION: false
+  RETURN_VISUALS: false
+
+2026-04-23 17:39:29,871 wavelet INFO: Running with config:
+DATALOADER:
+  NUM_INSTANCE: 4
+  NUM_WORKERS: 4
+  SAMPLER: softmax_triplet
+DATASETS:
+  NAMES: ('market1501',)
+  ROOT_DIR: ./core/storage/datasets
+INPUT:
+  PADDING: 10
+  PIXEL_MEAN: [0.485, 0.456, 0.406]
+  PIXEL_STD: [0.229, 0.224, 0.225]
+  PROB: 0.5
+  RE_PROB: 0.5
+  SIZE_TEST: [256, 128]
+  SIZE_TRAIN: [256, 128]
+MODEL:
+  DEVICE: cuda
+  DEVICE_ID: 0
+  IF_LABELSMOOTH: on
+  IF_WITH_CENTER: no
+  LAST_STRIDE: 1
+  METRIC_LOSS_TYPE: triplet
+  NAME: resnet50
+  NECK: bnneck
+  PRETRAIN_CHOICE: imagenet
+  PRETRAIN_PATH: ./core/storage/datasets/pretrained/resnet50-19c8e357.pth
+  RETURN_VISUALS: False
+  USE_ATTENTION_FUSION: False
+  USE_MULTISCALE_BRANCH: False
+  USE_WAVELET: True
+OUTPUT_DIR: ./core/storage/outputs/wavelet/train/market1501
+SOLVER:
+  BASE_LR: 0.0003
+  BIAS_LR_FACTOR: 2
+  CENTER_LOSS_WEIGHT: 0.0005
+  CENTER_LR: 0.5
+  CHECKPOINT_PERIOD: 10
+  CLUSTER_MARGIN: 0.3
+  EVAL_PERIOD: 10
+  GAMMA: 0.1
+  IMS_PER_BATCH: 96
+  LOG_PERIOD: 100
+  MARGIN: 0.3
+  MAX_EPOCHS: 60
+  MOMENTUM: 0.9
+  OPTIMIZER_NAME: Adam
+  RANGE_ALPHA: 0
+  RANGE_BETA: 1
+  RANGE_K: 2
+  RANGE_LOSS_WEIGHT: 1
+  RANGE_MARGIN: 0.3
+  STEPS: (30, 50)
+  WARMUP_FACTOR: 0.3333333333333333
+  WARMUP_ITERS: 500
+  WARMUP_METHOD: linear
+  WEIGHT_DECAY: 0.0005
+  WEIGHT_DECAY_BIAS: 0.0
+TEST:
+  FEAT_NORM: yes
+  IMS_PER_BATCH: 64
+  NECK_FEAT: after
+  RE_RANKING: no
+  WEIGHT: 
+2026-04-23 17:39:30,501 wavelet.train INFO: Start training
+2026-04-23 17:42:02,176 wavelet.train INFO: Epoch[1] Iteration[100/121] Loss: 7.859, Acc: 0.053, Base Lr: 1.00e-04
+2026-04-23 17:42:28,834 wavelet.train INFO: Epoch 1 done. Time per batch: 177.481[s] Speed: 65.4[samples/s]
+2026-04-23 17:42:28,834 wavelet.train INFO: ----------
+2026-04-23 17:44:40,223 wavelet.train INFO: Epoch[2] Iteration[100/121] Loss: 5.898, Acc: 0.131, Base Lr: 1.01e-04
+2026-04-23 17:45:06,857 wavelet.train INFO: Epoch 2 done. Time per batch: 157.296[s] Speed: 73.8[samples/s]
+2026-04-23 17:45:06,857 wavelet.train INFO: ----------
+2026-04-23 17:47:17,044 wavelet.train INFO: Epoch[3] Iteration[100/121] Loss: 4.845, Acc: 0.256, Base Lr: 1.01e-04
+2026-04-23 17:47:43,074 wavelet.train INFO: Epoch 3 done. Time per batch: 155.520[s] Speed: 74.7[samples/s]
+2026-04-23 17:47:43,075 wavelet.train INFO: ----------
+2026-04-23 17:49:51,323 wavelet.train INFO: Epoch[4] Iteration[100/121] Loss: 4.011, Acc: 0.436, Base Lr: 1.02e-04
+2026-04-23 17:50:17,370 wavelet.train INFO: Epoch 4 done. Time per batch: 153.635[s] Speed: 75.6[samples/s]
+2026-04-23 17:50:17,370 wavelet.train INFO: ----------
+2026-04-23 17:52:25,732 wavelet.train INFO: Epoch[5] Iteration[100/122] Loss: 3.299, Acc: 0.589, Base Lr: 1.02e-04
+2026-04-23 17:52:53,000 wavelet.train INFO: Epoch 5 done. Time per batch: 154.952[s] Speed: 75.6[samples/s]
+2026-04-23 17:52:53,000 wavelet.train INFO: ----------
+2026-04-23 17:55:01,240 wavelet.train INFO: Epoch[6] Iteration[100/122] Loss: 2.785, Acc: 0.698, Base Lr: 1.02e-04
+2026-04-23 17:55:28,537 wavelet.train INFO: Epoch 6 done. Time per batch: 154.852[s] Speed: 75.6[samples/s]
+2026-04-23 17:55:28,537 wavelet.train INFO: ----------
+2026-04-23 17:57:36,727 wavelet.train INFO: Epoch[7] Iteration[100/121] Loss: 2.333, Acc: 0.800, Base Lr: 1.03e-04
+2026-04-23 17:58:02,754 wavelet.train INFO: Epoch 7 done. Time per batch: 153.529[s] Speed: 75.7[samples/s]
+2026-04-23 17:58:02,755 wavelet.train INFO: ----------
+2026-04-23 18:00:11,044 wavelet.train INFO: Epoch[8] Iteration[100/122] Loss: 2.070, Acc: 0.858, Base Lr: 1.03e-04
+2026-04-23 18:00:38,299 wavelet.train INFO: Epoch 8 done. Time per batch: 154.843[s] Speed: 75.6[samples/s]
+2026-04-23 18:00:38,299 wavelet.train INFO: ----------
+2026-04-23 18:02:46,202 wavelet.train INFO: Epoch[9] Iteration[100/122] Loss: 1.920, Acc: 0.882, Base Lr: 1.04e-04
+2026-04-23 18:03:13,407 wavelet.train INFO: Epoch 9 done. Time per batch: 154.425[s] Speed: 75.8[samples/s]
+2026-04-23 18:03:13,407 wavelet.train INFO: ----------
+2026-04-23 18:05:21,470 wavelet.train INFO: Epoch[10] Iteration[100/122] Loss: 1.701, Acc: 0.926, Base Lr: 1.04e-04
+2026-04-23 18:05:49,071 wavelet.train INFO: Epoch 10 done. Time per batch: 154.607[s] Speed: 75.8[samples/s]
+2026-04-23 18:05:49,072 wavelet.train INFO: ----------
+2026-04-23 18:07:13,285 wavelet.train INFO: Validation Results - Epoch: 10
+2026-04-23 18:07:13,285 wavelet.train INFO: mAP: 64.9%
+2026-04-23 18:07:13,285 wavelet.train INFO: CMC curve, Rank-1  :83.5%
+2026-04-23 18:07:13,285 wavelet.train INFO: CMC curve, Rank-5  :93.5%
+2026-04-23 18:07:13,285 wavelet.train INFO: CMC curve, Rank-10 :95.8%
+2026-04-23 18:10:27,793 wavelet.train INFO: Epoch[11] Iteration[100/121] Loss: 1.632, Acc: 0.945, Base Lr: 1.04e-04
+2026-04-23 18:11:07,555 wavelet.train INFO: Epoch 11 done. Time per batch: 233.603[s] Speed: 49.7[samples/s]
+2026-04-23 18:11:07,555 wavelet.train INFO: ----------
+2026-04-23 18:14:21,360 wavelet.train INFO: Epoch[12] Iteration[100/121] Loss: 1.576, Acc: 0.950, Base Lr: 1.05e-04
+2026-04-23 18:15:01,192 wavelet.train INFO: Epoch 12 done. Time per batch: 232.972[s] Speed: 49.9[samples/s]
+2026-04-23 18:15:01,192 wavelet.train INFO: ----------
+2026-04-23 18:18:14,907 wavelet.train INFO: Epoch[13] Iteration[100/121] Loss: 1.503, Acc: 0.963, Base Lr: 1.05e-04
+2026-04-23 18:18:54,672 wavelet.train INFO: Epoch 13 done. Time per batch: 232.806[s] Speed: 49.9[samples/s]
+2026-04-23 18:18:54,672 wavelet.train INFO: ----------
+2026-04-23 18:22:08,455 wavelet.train INFO: Epoch[14] Iteration[100/122] Loss: 1.499, Acc: 0.960, Base Lr: 1.06e-04
+2026-04-23 18:22:50,180 wavelet.train INFO: Epoch 14 done. Time per batch: 234.823[s] Speed: 49.9[samples/s]
+2026-04-23 18:22:50,180 wavelet.train INFO: ----------
+2026-04-23 18:26:03,948 wavelet.train INFO: Epoch[15] Iteration[100/122] Loss: 1.456, Acc: 0.967, Base Lr: 1.06e-04
+2026-04-23 18:26:45,631 wavelet.train INFO: Epoch 15 done. Time per batch: 234.781[s] Speed: 49.9[samples/s]
+2026-04-23 18:26:45,631 wavelet.train INFO: ----------
+2026-04-23 18:29:59,512 wavelet.train INFO: Epoch[16] Iteration[100/121] Loss: 1.423, Acc: 0.971, Base Lr: 1.06e-04
+2026-04-23 18:30:39,840 wavelet.train INFO: Epoch 16 done. Time per batch: 233.501[s] Speed: 49.7[samples/s]
+2026-04-23 18:30:39,841 wavelet.train INFO: ----------
+2026-04-23 18:33:58,431 wavelet.train INFO: Epoch[17] Iteration[100/121] Loss: 1.384, Acc: 0.978, Base Lr: 1.07e-04
+2026-04-23 18:34:38,174 wavelet.train INFO: Epoch 17 done. Time per batch: 237.614[s] Speed: 48.9[samples/s]
+2026-04-23 18:34:38,174 wavelet.train INFO: ----------
+2026-04-23 18:38:00,260 wavelet.train INFO: Epoch[18] Iteration[100/121] Loss: 1.376, Acc: 0.973, Base Lr: 1.07e-04
+2026-04-23 18:38:40,918 wavelet.train INFO: Epoch 18 done. Time per batch: 242.033[s] Speed: 48.0[samples/s]
+2026-04-23 18:38:40,918 wavelet.train INFO: ----------
+2026-04-23 18:42:00,051 wavelet.train INFO: Epoch[19] Iteration[100/121] Loss: 1.330, Acc: 0.984, Base Lr: 1.08e-04
+2026-04-23 18:42:40,719 wavelet.train INFO: Epoch 19 done. Time per batch: 239.082[s] Speed: 48.6[samples/s]
+2026-04-23 18:42:40,719 wavelet.train INFO: ----------
+2026-04-23 18:45:59,395 wavelet.train INFO: Epoch[20] Iteration[100/122] Loss: 1.317, Acc: 0.984, Base Lr: 1.08e-04
+2026-04-23 18:46:42,653 wavelet.train INFO: Epoch 20 done. Time per batch: 240.816[s] Speed: 48.6[samples/s]
+2026-04-23 18:46:42,653 wavelet.train INFO: ----------
+2026-04-23 18:48:01,722 wavelet.train INFO: Validation Results - Epoch: 20
+2026-04-23 18:48:01,722 wavelet.train INFO: mAP: 70.8%
+2026-04-23 18:48:01,722 wavelet.train INFO: CMC curve, Rank-1  :87.0%
+2026-04-23 18:48:01,722 wavelet.train INFO: CMC curve, Rank-5  :95.3%
+2026-04-23 18:48:01,722 wavelet.train INFO: CMC curve, Rank-10 :97.0%
+2026-04-23 18:51:20,141 wavelet.train INFO: Epoch[21] Iteration[100/122] Loss: 1.315, Acc: 0.987, Base Lr: 1.08e-04
+2026-04-23 18:52:02,689 wavelet.train INFO: Epoch 21 done. Time per batch: 240.261[s] Speed: 48.7[samples/s]
+2026-04-23 18:52:02,689 wavelet.train INFO: ----------
+2026-04-23 18:55:21,361 wavelet.train INFO: Epoch[22] Iteration[100/121] Loss: 1.313, Acc: 0.986, Base Lr: 1.09e-04
+2026-04-23 18:56:02,206 wavelet.train INFO: Epoch 22 done. Time per batch: 238.796[s] Speed: 48.6[samples/s]
+2026-04-23 18:56:02,206 wavelet.train INFO: ----------
+2026-04-23 18:59:20,857 wavelet.train INFO: Epoch[23] Iteration[100/121] Loss: 1.310, Acc: 0.986, Base Lr: 1.09e-04
+2026-04-23 19:00:01,538 wavelet.train INFO: Epoch 23 done. Time per batch: 238.635[s] Speed: 48.7[samples/s]
+2026-04-23 19:00:01,538 wavelet.train INFO: ----------
+2026-04-23 19:03:19,627 wavelet.train INFO: Epoch[24] Iteration[100/121] Loss: 1.273, Acc: 0.988, Base Lr: 1.10e-04
+2026-04-23 19:04:00,283 wavelet.train INFO: Epoch 24 done. Time per batch: 238.047[s] Speed: 48.8[samples/s]
+2026-04-23 19:04:00,283 wavelet.train INFO: ----------
+2026-04-23 19:07:18,315 wavelet.train INFO: Epoch[25] Iteration[100/121] Loss: 1.300, Acc: 0.985, Base Lr: 1.10e-04
+2026-04-23 19:07:58,945 wavelet.train INFO: Epoch 25 done. Time per batch: 237.983[s] Speed: 48.8[samples/s]
+2026-04-23 19:07:58,945 wavelet.train INFO: ----------
+2026-04-23 19:11:17,037 wavelet.train INFO: Epoch[26] Iteration[100/121] Loss: 1.269, Acc: 0.990, Base Lr: 1.10e-04
+2026-04-23 19:11:57,677 wavelet.train INFO: Epoch 26 done. Time per batch: 238.055[s] Speed: 48.8[samples/s]
+2026-04-23 19:11:57,677 wavelet.train INFO: ----------
+2026-04-23 19:15:15,768 wavelet.train INFO: Epoch[27] Iteration[100/121] Loss: 1.248, Acc: 0.990, Base Lr: 1.11e-04
+2026-04-23 19:15:56,415 wavelet.train INFO: Epoch 27 done. Time per batch: 238.055[s] Speed: 48.8[samples/s]
+2026-04-23 19:15:56,415 wavelet.train INFO: ----------
+2026-04-23 19:19:14,600 wavelet.train INFO: Epoch[28] Iteration[100/121] Loss: 1.251, Acc: 0.991, Base Lr: 1.11e-04
+2026-04-23 19:19:55,238 wavelet.train INFO: Epoch 28 done. Time per batch: 238.138[s] Speed: 48.8[samples/s]
+2026-04-23 19:19:55,238 wavelet.train INFO: ----------
+2026-04-23 19:23:13,312 wavelet.train INFO: Epoch[29] Iteration[100/121] Loss: 1.248, Acc: 0.991, Base Lr: 1.12e-04
+2026-04-23 19:23:54,010 wavelet.train INFO: Epoch 29 done. Time per batch: 238.095[s] Speed: 48.8[samples/s]
+2026-04-23 19:23:54,010 wavelet.train INFO: ----------
+2026-04-23 19:27:11,972 wavelet.train INFO: Epoch[30] Iteration[100/122] Loss: 1.221, Acc: 0.994, Base Lr: 1.12e-05
+2026-04-23 19:27:54,922 wavelet.train INFO: Epoch 30 done. Time per batch: 239.845[s] Speed: 48.8[samples/s]
+2026-04-23 19:27:54,923 wavelet.train INFO: ----------
+2026-04-23 19:29:13,958 wavelet.train INFO: Validation Results - Epoch: 30
+2026-04-23 19:29:13,958 wavelet.train INFO: mAP: 73.6%
+2026-04-23 19:29:13,958 wavelet.train INFO: CMC curve, Rank-1  :88.8%
+2026-04-23 19:29:13,958 wavelet.train INFO: CMC curve, Rank-5  :96.4%
+2026-04-23 19:29:13,958 wavelet.train INFO: CMC curve, Rank-10 :97.9%
+2026-04-23 19:32:32,466 wavelet.train INFO: Epoch[31] Iteration[100/121] Loss: 1.175, Acc: 0.996, Base Lr: 1.12e-05
+2026-04-23 19:33:13,269 wavelet.train INFO: Epoch 31 done. Time per batch: 238.653[s] Speed: 48.7[samples/s]
+2026-04-23 19:33:13,269 wavelet.train INFO: ----------
+2026-04-23 19:36:32,160 wavelet.train INFO: Epoch[32] Iteration[100/121] Loss: 1.185, Acc: 0.993, Base Lr: 1.13e-05
+2026-04-23 19:37:12,972 wavelet.train INFO: Epoch 32 done. Time per batch: 239.048[s] Speed: 48.6[samples/s]
+2026-04-23 19:37:12,972 wavelet.train INFO: ----------
+2026-04-23 19:40:31,711 wavelet.train INFO: Epoch[33] Iteration[100/121] Loss: 1.172, Acc: 0.997, Base Lr: 1.13e-05
+2026-04-23 19:41:12,480 wavelet.train INFO: Epoch 33 done. Time per batch: 238.829[s] Speed: 48.6[samples/s]
+2026-04-23 19:41:12,480 wavelet.train INFO: ----------
+2026-04-23 19:44:31,179 wavelet.train INFO: Epoch[34] Iteration[100/121] Loss: 1.166, Acc: 0.996, Base Lr: 1.14e-05
+2026-04-23 19:45:12,009 wavelet.train INFO: Epoch 34 done. Time per batch: 238.847[s] Speed: 48.6[samples/s]
+2026-04-23 19:45:12,010 wavelet.train INFO: ----------
+2026-04-23 19:48:30,898 wavelet.train INFO: Epoch[35] Iteration[100/121] Loss: 1.158, Acc: 0.997, Base Lr: 1.14e-05
+2026-04-23 19:49:11,646 wavelet.train INFO: Epoch 35 done. Time per batch: 238.955[s] Speed: 48.6[samples/s]
+2026-04-23 19:49:11,646 wavelet.train INFO: ----------
+2026-04-23 19:52:30,392 wavelet.train INFO: Epoch[36] Iteration[100/121] Loss: 1.149, Acc: 0.996, Base Lr: 1.14e-05
+2026-04-23 19:53:11,217 wavelet.train INFO: Epoch 36 done. Time per batch: 238.889[s] Speed: 48.6[samples/s]
+2026-04-23 19:53:11,217 wavelet.train INFO: ----------
+2026-04-23 19:56:33,552 wavelet.train INFO: Epoch[37] Iteration[100/121] Loss: 1.156, Acc: 0.997, Base Lr: 1.15e-05
+2026-04-23 19:57:14,418 wavelet.train INFO: Epoch 37 done. Time per batch: 242.463[s] Speed: 47.9[samples/s]
+2026-04-23 19:57:14,418 wavelet.train INFO: ----------
+2026-04-23 20:00:33,558 wavelet.train INFO: Epoch[38] Iteration[100/121] Loss: 1.152, Acc: 0.997, Base Lr: 1.15e-05
+2026-04-23 20:01:15,205 wavelet.train INFO: Epoch 38 done. Time per batch: 240.092[s] Speed: 48.4[samples/s]
+2026-04-23 20:01:15,205 wavelet.train INFO: ----------
+2026-04-23 20:04:33,823 wavelet.train INFO: Epoch[39] Iteration[100/120] Loss: 1.146, Acc: 0.997, Base Lr: 1.16e-05
+2026-04-23 20:05:12,682 wavelet.train INFO: Epoch 39 done. Time per batch: 236.796[s] Speed: 48.6[samples/s]
+2026-04-23 20:05:12,682 wavelet.train INFO: ----------
+2026-04-23 20:08:32,857 wavelet.train INFO: Epoch[40] Iteration[100/122] Loss: 1.152, Acc: 0.997, Base Lr: 1.16e-05
+2026-04-23 20:09:15,969 wavelet.train INFO: Epoch 40 done. Time per batch: 242.184[s] Speed: 48.4[samples/s]
+2026-04-23 20:09:15,969 wavelet.train INFO: ----------
+2026-04-23 20:10:34,836 wavelet.train INFO: Validation Results - Epoch: 40
+2026-04-23 20:10:34,836 wavelet.train INFO: mAP: 75.8%
+2026-04-23 20:10:34,836 wavelet.train INFO: CMC curve, Rank-1  :90.1%
+2026-04-23 20:10:34,836 wavelet.train INFO: CMC curve, Rank-5  :96.6%
+2026-04-23 20:10:34,836 wavelet.train INFO: CMC curve, Rank-10 :98.0%
+2026-04-23 20:13:55,684 wavelet.train INFO: Epoch[41] Iteration[100/122] Loss: 1.137, Acc: 0.998, Base Lr: 1.16e-05
+2026-04-23 20:14:38,408 wavelet.train INFO: Epoch 41 done. Time per batch: 242.857[s] Speed: 48.2[samples/s]
+2026-04-23 20:14:38,409 wavelet.train INFO: ----------
+2026-04-23 20:17:57,217 wavelet.train INFO: Epoch[42] Iteration[100/121] Loss: 1.138, Acc: 0.998, Base Lr: 1.17e-05
+2026-04-23 20:18:38,016 wavelet.train INFO: Epoch 42 done. Time per batch: 238.907[s] Speed: 48.6[samples/s]
+2026-04-23 20:18:38,016 wavelet.train INFO: ----------
+2026-04-23 20:21:56,700 wavelet.train INFO: Epoch[43] Iteration[100/122] Loss: 1.140, Acc: 0.997, Base Lr: 1.17e-05
+2026-04-23 20:22:39,376 wavelet.train INFO: Epoch 43 done. Time per batch: 240.661[s] Speed: 48.7[samples/s]
+2026-04-23 20:22:39,376 wavelet.train INFO: ----------
+2026-04-23 20:25:58,852 wavelet.train INFO: Epoch[44] Iteration[100/121] Loss: 1.138, Acc: 0.998, Base Lr: 1.18e-05
+2026-04-23 20:26:39,624 wavelet.train INFO: Epoch 44 done. Time per batch: 239.567[s] Speed: 48.5[samples/s]
+2026-04-23 20:26:39,624 wavelet.train INFO: ----------
+2026-04-23 20:29:58,376 wavelet.train INFO: Epoch[45] Iteration[100/122] Loss: 1.140, Acc: 0.997, Base Lr: 1.18e-05
+2026-04-23 20:30:41,201 wavelet.train INFO: Epoch 45 done. Time per batch: 240.867[s] Speed: 48.6[samples/s]
+2026-04-23 20:30:41,201 wavelet.train INFO: ----------
+2026-04-23 20:34:01,721 wavelet.train INFO: Epoch[46] Iteration[100/121] Loss: 1.143, Acc: 0.998, Base Lr: 1.18e-05
+2026-04-23 20:34:42,519 wavelet.train INFO: Epoch 46 done. Time per batch: 240.572[s] Speed: 48.3[samples/s]
+2026-04-23 20:34:42,519 wavelet.train INFO: ----------
+2026-04-23 20:38:01,406 wavelet.train INFO: Epoch[47] Iteration[100/122] Loss: 1.135, Acc: 0.997, Base Lr: 1.19e-05
+2026-04-23 20:38:44,145 wavelet.train INFO: Epoch 47 done. Time per batch: 240.923[s] Speed: 48.6[samples/s]
+2026-04-23 20:38:44,145 wavelet.train INFO: ----------
+2026-04-23 20:42:03,587 wavelet.train INFO: Epoch[48] Iteration[100/122] Loss: 1.133, Acc: 0.998, Base Lr: 1.19e-05
+2026-04-23 20:42:46,271 wavelet.train INFO: Epoch 48 done. Time per batch: 241.435[s] Speed: 48.5[samples/s]
+2026-04-23 20:42:46,271 wavelet.train INFO: ----------
+2026-04-23 20:46:05,035 wavelet.train INFO: Epoch[49] Iteration[100/122] Loss: 1.130, Acc: 0.998, Base Lr: 1.20e-05
+2026-04-23 20:46:47,729 wavelet.train INFO: Epoch 49 done. Time per batch: 240.774[s] Speed: 48.6[samples/s]
+2026-04-23 20:46:47,729 wavelet.train INFO: ----------
+2026-04-23 20:50:07,127 wavelet.train INFO: Epoch[50] Iteration[100/121] Loss: 1.130, Acc: 0.998, Base Lr: 1.20e-06
+2026-04-23 20:50:48,274 wavelet.train INFO: Epoch 50 done. Time per batch: 239.471[s] Speed: 48.5[samples/s]
+2026-04-23 20:50:48,274 wavelet.train INFO: ----------
+2026-04-23 20:52:07,150 wavelet.train INFO: Validation Results - Epoch: 50
+2026-04-23 20:52:07,150 wavelet.train INFO: mAP: 76.0%
+2026-04-23 20:52:07,150 wavelet.train INFO: CMC curve, Rank-1  :90.4%
+2026-04-23 20:52:07,150 wavelet.train INFO: CMC curve, Rank-5  :96.5%
+2026-04-23 20:52:07,150 wavelet.train INFO: CMC curve, Rank-10 :98.1%
+2026-04-23 20:55:25,855 wavelet.train INFO: Epoch[51] Iteration[100/121] Loss: 1.121, Acc: 0.998, Base Lr: 1.20e-06
+2026-04-23 20:56:06,599 wavelet.train INFO: Epoch 51 done. Time per batch: 238.791[s] Speed: 48.6[samples/s]
+2026-04-23 20:56:06,599 wavelet.train INFO: ----------
+2026-04-23 20:59:25,599 wavelet.train INFO: Epoch[52] Iteration[100/121] Loss: 1.118, Acc: 0.998, Base Lr: 1.21e-06
+2026-04-23 21:00:06,959 wavelet.train INFO: Epoch 52 done. Time per batch: 239.665[s] Speed: 48.5[samples/s]
+2026-04-23 21:00:06,959 wavelet.train INFO: ----------
+2026-04-23 21:03:30,745 wavelet.train INFO: Epoch[53] Iteration[100/121] Loss: 1.131, Acc: 0.996, Base Lr: 1.21e-06
+2026-04-23 21:04:11,499 wavelet.train INFO: Epoch 53 done. Time per batch: 243.820[s] Speed: 47.6[samples/s]
+2026-04-23 21:04:11,499 wavelet.train INFO: ----------
+2026-04-23 21:07:30,385 wavelet.train INFO: Epoch[54] Iteration[100/121] Loss: 1.122, Acc: 0.998, Base Lr: 1.22e-06
+2026-04-23 21:08:11,167 wavelet.train INFO: Epoch 54 done. Time per batch: 238.945[s] Speed: 48.6[samples/s]
+2026-04-23 21:08:11,167 wavelet.train INFO: ----------
+2026-04-23 21:11:29,979 wavelet.train INFO: Epoch[55] Iteration[100/122] Loss: 1.134, Acc: 0.998, Base Lr: 1.22e-06
+2026-04-23 21:12:12,708 wavelet.train INFO: Epoch 55 done. Time per batch: 240.806[s] Speed: 48.6[samples/s]
+2026-04-23 21:12:12,708 wavelet.train INFO: ----------
+2026-04-23 21:15:31,385 wavelet.train INFO: Epoch[56] Iteration[100/122] Loss: 1.127, Acc: 0.997, Base Lr: 1.22e-06
+2026-04-23 21:16:14,091 wavelet.train INFO: Epoch 56 done. Time per batch: 240.670[s] Speed: 48.7[samples/s]
+2026-04-23 21:16:14,091 wavelet.train INFO: ----------
+2026-04-23 21:19:32,934 wavelet.train INFO: Epoch[57] Iteration[100/121] Loss: 1.123, Acc: 0.999, Base Lr: 1.23e-06
+2026-04-23 21:20:13,765 wavelet.train INFO: Epoch 57 done. Time per batch: 238.952[s] Speed: 48.6[samples/s]
+2026-04-23 21:20:13,765 wavelet.train INFO: ----------
+2026-04-23 21:23:32,623 wavelet.train INFO: Epoch[58] Iteration[100/122] Loss: 1.121, Acc: 0.998, Base Lr: 1.23e-06
+2026-04-23 21:24:15,388 wavelet.train INFO: Epoch 58 done. Time per batch: 240.899[s] Speed: 48.6[samples/s]
+2026-04-23 21:24:15,388 wavelet.train INFO: ----------
+2026-04-23 21:27:34,187 wavelet.train INFO: Epoch[59] Iteration[100/121] Loss: 1.120, Acc: 0.997, Base Lr: 1.24e-06
+2026-04-23 21:28:15,468 wavelet.train INFO: Epoch 59 done. Time per batch: 239.341[s] Speed: 48.5[samples/s]
+2026-04-23 21:28:15,468 wavelet.train INFO: ----------
+2026-04-23 21:31:38,981 wavelet.train INFO: Epoch[60] Iteration[100/121] Loss: 1.127, Acc: 0.996, Base Lr: 1.24e-06
+2026-04-23 21:32:21,018 wavelet.train INFO: Epoch 60 done. Time per batch: 244.386[s] Speed: 47.5[samples/s]
+2026-04-23 21:32:21,018 wavelet.train INFO: ----------
+2026-04-23 21:33:43,519 wavelet.train INFO: Validation Results - Epoch: 60
+2026-04-23 21:33:43,519 wavelet.train INFO: mAP: 76.4%
+2026-04-23 21:33:43,519 wavelet.train INFO: CMC curve, Rank-1  :90.4%
+2026-04-23 21:33:43,519 wavelet.train INFO: CMC curve, Rank-5  :96.7%
+2026-04-23 21:33:43,519 wavelet.train INFO: CMC curve, Rank-10 :98.0%

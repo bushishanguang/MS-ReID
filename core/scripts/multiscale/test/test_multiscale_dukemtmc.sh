@@ -1,0 +1,1 @@
+uv run python -m core.tools.test --config_file "./core/configs/exp3_multiscale.yml" DATASETS.NAMES "('dukemtmc',)" TEST.WEIGHT "./core/storage/outputs/multiscale/train/dukemtmc/resnet50_model_60.pth" OUTPUT_DIR "./core/storage/outputs/multiscale/test/dukemtmc"

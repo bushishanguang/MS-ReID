@@ -1,0 +1,1 @@
+uv run python -m core.tools.test --config_file "./core/configs/exp5_full_msreid.yml" DATASETS.NAMES "('market1501',)" TEST.WEIGHT "./core/storage/outputs/full_msreid/train/market1501/resnet50_model_60.pth" OUTPUT_DIR "./core/storage/outputs/full_msreid/test/market1501"

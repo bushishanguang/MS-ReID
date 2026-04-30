@@ -43,6 +43,12 @@ _C.MODEL.METRIC_LOSS_TYPE = 'triplet'
 # If train with label smooth, options: 'on', 'off'
 _C.MODEL.IF_LABELSMOOTH = 'on'
 
+# MS-ReID incremental modules. This development round is for ResNet50 only.
+_C.MODEL.USE_WAVELET = True
+_C.MODEL.USE_MULTISCALE_BRANCH = True
+_C.MODEL.USE_ATTENTION_FUSION = True
+_C.MODEL.RETURN_VISUALS = False
+
 
 # -----------------------------------------------------------------------------
 # INPUT

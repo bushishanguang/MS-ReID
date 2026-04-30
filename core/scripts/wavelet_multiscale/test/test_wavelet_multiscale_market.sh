@@ -1,0 +1,1 @@
+uv run python -m core.tools.test --config_file "./core/configs/exp4_wavelet_multiscale.yml" DATASETS.NAMES "('market1501',)" TEST.WEIGHT "./core/storage/outputs/wavelet_multiscale/train/market1501/resnet50_model_60.pth" OUTPUT_DIR "./core/storage/outputs/wavelet_multiscale/test/market1501"

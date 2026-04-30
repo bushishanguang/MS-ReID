@@ -45,7 +45,7 @@ def create_supervised_trainer(model, optimizer, loss_fn,
         img, target = batch
         img = img.to(device) if torch.cuda.device_count() >= 1 else img
         target = target.to(device) if torch.cuda.device_count() >= 1 else target
-        score, feat = model(img)
+        score, feat = model(img, return_visuals=False)
         loss = loss_fn(score, feat, target)
         loss.backward()
         optimizer.step()
@@ -83,7 +83,7 @@ def create_supervised_trainer_with_center(model, center_criterion, optimizer, op
         img, target = batch
         img = img.to(device) if torch.cuda.device_count() >= 1 else img
         target = target.to(device) if torch.cuda.device_count() >= 1 else target
-        score, feat = model(img)
+        score, feat = model(img, return_visuals=False)
         loss = loss_fn(score, feat, target)
         # print("Total loss is {}, center loss is {}".format(loss, center_criterion(feat, target)))
         loss.backward()
@@ -122,7 +122,7 @@ def create_supervised_evaluator(model, metrics,
         with torch.no_grad():
             data, pids, camids = batch
             data = data.to(device) if torch.cuda.device_count() >= 1 else data
-            feat = model(data)
+            feat = model(data, return_visuals=False)
             return feat, pids, camids
 
     engine = Engine(_inference)

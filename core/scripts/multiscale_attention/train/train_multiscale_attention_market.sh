@@ -1,0 +1,1 @@
+uv run python -m core.tools.train --config_file "./core/configs/exp6_multiscale_attention.yml" DATASETS.NAMES "('market1501',)" OUTPUT_DIR "./core/storage/outputs/multiscale_attention/train/market1501"

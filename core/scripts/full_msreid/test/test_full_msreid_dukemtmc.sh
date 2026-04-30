@@ -1,0 +1,1 @@
+uv run python -m core.tools.test --config_file "./core/configs/exp5_full_msreid.yml" DATASETS.NAMES "('dukemtmc',)" TEST.WEIGHT "./core/storage/outputs/full_msreid/train/dukemtmc/resnet50_model_60.pth" OUTPUT_DIR "./core/storage/outputs/full_msreid/test/dukemtmc"

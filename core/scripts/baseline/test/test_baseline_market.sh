@@ -1,1 +1,1 @@
-uv run python -m core.tools.test DATASETS.NAMES "('market1501',)" TEST.WEIGHT "./core/storage/outputs/baseline/train/market1501/resnet50_model_60.pth" OUTPUT_DIR "./core/storage/outputs/baseline/test/market1501"
+uv run python -m core.tools.test --config_file "./core/configs/exp1_baseline.yml" DATASETS.NAMES "('market1501',)" TEST.WEIGHT "./core/storage/outputs/baseline/train/market1501/resnet50_model_60.pth" OUTPUT_DIR "./core/storage/outputs/baseline/test/market1501"

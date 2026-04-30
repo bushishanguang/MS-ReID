@@ -1,0 +1,55 @@
+[2026-04-23T17:39:28.4747474+08:00] starting remaining experiments batch (16 commands)
+[2026-04-23T17:39:28.4885030+08:00] START wavelet train market1501
+[2026-04-23T21:33:44.0768401+08:00] END wavelet train market1501 exit=0
+[2026-04-23T21:33:44.0822805+08:00] START wavelet train dukemtmc
+[2026-04-23T23:05:39.9213780+08:00] END wavelet train dukemtmc exit=0
+[2026-04-23T23:05:39.9238052+08:00] START wavelet test market1501
+[2026-04-23T23:07:05.7522004+08:00] END wavelet test market1501 exit=0
+[2026-04-23T23:07:05.7537416+08:00] START wavelet test dukemtmc
+[2026-04-23T23:08:19.7759881+08:00] END wavelet test dukemtmc exit=0
+[2026-04-23T23:08:19.7774381+08:00] START multiscale train market1501
+[2026-04-24T02:19:05.1127708+08:00] END multiscale train market1501 exit=0
+[2026-04-24T02:19:05.1144410+08:00] START multiscale train dukemtmc
+[2026-04-24T06:58:08.8466910+08:00] END multiscale train dukemtmc exit=0
+[2026-04-24T06:58:08.8478220+08:00] START multiscale test market1501
+[2026-04-24T06:59:43.1741738+08:00] END multiscale test market1501 exit=0
+[2026-04-24T06:59:43.1751129+08:00] START multiscale test dukemtmc
+[2026-04-24T07:01:05.6060504+08:00] END multiscale test dukemtmc exit=0
+[2026-04-24T07:01:05.6071473+08:00] START wavelet_multiscale train market1501
+[2026-04-24T10:55:51.6553433+08:00] END wavelet_multiscale train market1501 exit=0
+[2026-04-24T10:55:51.6564129+08:00] START wavelet_multiscale train dukemtmc
+[2026-04-24T15:17:40.3452692+08:00] END wavelet_multiscale train dukemtmc exit=0
+[2026-04-24T15:17:40.3466249+08:00] START wavelet_multiscale test market1501
+[2026-04-24T15:19:18.2746450+08:00] END wavelet_multiscale test market1501 exit=0
+[2026-04-24T15:19:18.2758161+08:00] START wavelet_multiscale test dukemtmc
+[2026-04-24T15:20:41.6588123+08:00] END wavelet_multiscale test dukemtmc exit=0
+[2026-04-24T15:20:41.6597917+08:00] START full_msreid train market1501
+[2026-04-24T17:46:21.8630182+08:00] resume remaining experiments after 24h timeout
+[2026-04-24T17:46:21.9333398+08:00] WAIT full_msreid train market1501 active :: 2026-04-24 17:45:22,267 full_msreid.train INFO: ----------
+[2026-04-24T17:56:21.9693172+08:00] WAIT full_msreid train market1501 active :: 2026-04-24 17:51:41,188 full_msreid.train INFO: ----------
+[2026-04-24T18:06:21.9974706+08:00] WAIT full_msreid train market1501 active :: 2026-04-24 18:04:51,321 full_msreid.train INFO: CMC curve, Rank-10 :97.9%
+[2026-04-24T18:16:22.0227571+08:00] WAIT full_msreid train market1501 active :: 2026-04-24 18:15:26,425 full_msreid.train INFO: Epoch[32] Iteration[100/121] Loss: 1.156, Acc: 0.996, Base Lr: 1.13e-05
+[2026-04-24T18:26:22.0469495+08:00] WAIT full_msreid train market1501 active :: 2026-04-24 18:22:17,598 full_msreid.train INFO: ----------
+[2026-04-24T18:36:22.0684900+08:00] WAIT full_msreid train market1501 active :: 2026-04-24 18:33:58,557 full_msreid.train INFO: ----------
+[2026-04-24T18:46:22.0970864+08:00] WAIT full_msreid train market1501 active :: 2026-04-24 18:45:40,536 full_msreid.train INFO: ----------
+[2026-04-24T18:56:22.1162874+08:00] WAIT full_msreid train market1501 active :: 2026-04-24 18:56:16,465 full_msreid.train INFO: Epoch[39] Iteration[100/122] Loss: 1.127, Acc: 0.998, Base Lr: 1.16e-05
+[2026-04-24T19:06:22.1454506+08:00] WAIT full_msreid train market1501 active :: 2026-04-24 19:04:38,118 full_msreid.train INFO: CMC curve, Rank-10 :98.3%
+[2026-04-24T19:16:22.1636673+08:00] WAIT full_msreid train market1501 active :: 2026-04-24 19:16:19,619 full_msreid.train INFO: ----------
+[2026-04-24T19:26:22.1833282+08:00] WAIT full_msreid train market1501 active :: 2026-04-24 19:22:07,698 full_msreid.train INFO: ----------
+[2026-04-24T19:36:22.2102632+08:00] WAIT full_msreid train market1501 active :: 2026-04-24 19:33:45,938 full_msreid.train INFO: ----------
+[2026-04-24T19:46:22.2302566+08:00] WAIT full_msreid train market1501 active :: 2026-04-24 19:45:21,533 full_msreid.train INFO: ----------
+[2026-04-24T19:56:22.2438335+08:00] WAIT full_msreid train market1501 active :: 2026-04-24 19:55:57,499 full_msreid.train INFO: Epoch[49] Iteration[100/121] Loss: 1.110, Acc: 0.998, Base Lr: 1.20e-05
+[2026-04-24T20:06:22.2597928+08:00] WAIT full_msreid train market1501 active :: 2026-04-24 20:04:17,392 full_msreid.train INFO: CMC curve, Rank-10 :98.3%
+[2026-04-24T20:16:22.2730360+08:00] WAIT full_msreid train market1501 active :: 2026-04-24 20:15:44,979 full_msreid.train INFO: ----------
+[2026-04-24T20:26:22.2964575+08:00] WAIT full_msreid train market1501 active :: 2026-04-24 20:21:37,116 full_msreid.train INFO: ----------
+[2026-04-24T20:36:22.3260408+08:00] WAIT full_msreid train market1501 active :: 2026-04-24 20:33:40,181 full_msreid.train INFO: ----------
+[2026-04-24T20:46:22.3499355+08:00] WAIT full_msreid train market1501 active :: 2026-04-24 20:46:17,401 full_msreid.train INFO: ----------
+[2026-04-24T20:56:22.3740471+08:00] WAIT full_msreid train market1501 active :: 2026-04-24 20:52:30,738 full_msreid.train INFO: ----------
+[2026-04-24T21:06:22.3868312+08:00] DONE full_msreid train market1501 reached epoch 60
+[2026-04-24T21:06:22.3911738+08:00] START full_msreid test market1501
+[2026-04-24T21:08:32.7439922+08:00] END full_msreid test market1501 exit=0
+[2026-04-24T21:08:32.7612556+08:00] START full_msreid train dukemtmc
+[2026-04-25T01:28:14.6183239+08:00] END full_msreid train dukemtmc exit=0
+[2026-04-25T01:28:14.6203468+08:00] START full_msreid test dukemtmc
+[2026-04-25T01:29:44.0480530+08:00] END full_msreid test dukemtmc exit=0
+[2026-04-25T01:29:44.0491964+08:00] all remaining experiments completed

@@ -1,0 +1,285 @@
+2026-04-24 02:19:06,739 multiscale INFO: Using 1 GPUS
+2026-04-24 02:19:06,739 multiscale INFO: Namespace(config_file='./core/configs/exp3_multiscale.yml', opts=['DATASETS.NAMES', "('dukemtmc',)", 'OUTPUT_DIR', './core/storage/outputs/multiscale/train/dukemtmc'])
+2026-04-24 02:19:06,739 multiscale INFO: Loaded configuration file ./core/configs/exp3_multiscale.yml
+2026-04-24 02:19:06,740 multiscale INFO: 
+MODEL:
+  USE_WAVELET: false
+  USE_MULTISCALE_BRANCH: true
+  USE_ATTENTION_FUSION: false
+  RETURN_VISUALS: false
+
+2026-04-24 02:19:06,740 multiscale INFO: Running with config:
+DATALOADER:
+  NUM_INSTANCE: 4
+  NUM_WORKERS: 4
+  SAMPLER: softmax_triplet
+DATASETS:
+  NAMES: ('dukemtmc',)
+  ROOT_DIR: ./core/storage/datasets
+INPUT:
+  PADDING: 10
+  PIXEL_MEAN: [0.485, 0.456, 0.406]
+  PIXEL_STD: [0.229, 0.224, 0.225]
+  PROB: 0.5
+  RE_PROB: 0.5
+  SIZE_TEST: [256, 128]
+  SIZE_TRAIN: [256, 128]
+MODEL:
+  DEVICE: cuda
+  DEVICE_ID: 0
+  IF_LABELSMOOTH: on
+  IF_WITH_CENTER: no
+  LAST_STRIDE: 1
+  METRIC_LOSS_TYPE: triplet
+  NAME: resnet50
+  NECK: bnneck
+  PRETRAIN_CHOICE: imagenet
+  PRETRAIN_PATH: ./core/storage/datasets/pretrained/resnet50-19c8e357.pth
+  RETURN_VISUALS: False
+  USE_ATTENTION_FUSION: False
+  USE_MULTISCALE_BRANCH: True
+  USE_WAVELET: False
+OUTPUT_DIR: ./core/storage/outputs/multiscale/train/dukemtmc
+SOLVER:
+  BASE_LR: 0.0003
+  BIAS_LR_FACTOR: 2
+  CENTER_LOSS_WEIGHT: 0.0005
+  CENTER_LR: 0.5
+  CHECKPOINT_PERIOD: 10
+  CLUSTER_MARGIN: 0.3
+  EVAL_PERIOD: 10
+  GAMMA: 0.1
+  IMS_PER_BATCH: 96
+  LOG_PERIOD: 100
+  MARGIN: 0.3
+  MAX_EPOCHS: 60
+  MOMENTUM: 0.9
+  OPTIMIZER_NAME: Adam
+  RANGE_ALPHA: 0
+  RANGE_BETA: 1
+  RANGE_K: 2
+  RANGE_LOSS_WEIGHT: 1
+  RANGE_MARGIN: 0.3
+  STEPS: (30, 50)
+  WARMUP_FACTOR: 0.3333333333333333
+  WARMUP_ITERS: 500
+  WARMUP_METHOD: linear
+  WEIGHT_DECAY: 0.0005
+  WEIGHT_DECAY_BIAS: 0.0
+TEST:
+  FEAT_NORM: yes
+  IMS_PER_BATCH: 64
+  NECK_FEAT: after
+  RE_RANKING: no
+  WEIGHT: 
+2026-04-24 02:19:07,544 multiscale.train INFO: Start training
+2026-04-24 02:21:30,252 multiscale.train INFO: Epoch[1] Iteration[100/149] Loss: 7.771, Acc: 0.049, Base Lr: 1.00e-04
+2026-04-24 02:22:34,012 multiscale.train INFO: Epoch 1 done. Time per batch: 205.520[s] Speed: 69.6[samples/s]
+2026-04-24 02:22:34,012 multiscale.train INFO: ----------
+2026-04-24 02:24:49,303 multiscale.train INFO: Epoch[2] Iteration[100/149] Loss: 5.592, Acc: 0.200, Base Lr: 1.01e-04
+2026-04-24 02:25:52,930 multiscale.train INFO: Epoch 2 done. Time per batch: 198.104[s] Speed: 72.2[samples/s]
+2026-04-24 02:25:52,930 multiscale.train INFO: ----------
+2026-04-24 02:28:08,122 multiscale.train INFO: Epoch[3] Iteration[100/149] Loss: 4.087, Acc: 0.457, Base Lr: 1.01e-04
+2026-04-24 02:29:11,843 multiscale.train INFO: Epoch 3 done. Time per batch: 198.087[s] Speed: 72.2[samples/s]
+2026-04-24 02:29:11,843 multiscale.train INFO: ----------
+2026-04-24 02:31:27,089 multiscale.train INFO: Epoch[4] Iteration[100/148] Loss: 3.151, Acc: 0.661, Base Lr: 1.02e-04
+2026-04-24 02:32:29,434 multiscale.train INFO: Epoch 4 done. Time per batch: 196.806[s] Speed: 72.2[samples/s]
+2026-04-24 02:32:29,434 multiscale.train INFO: ----------
+2026-04-24 02:34:45,022 multiscale.train INFO: Epoch[5] Iteration[100/149] Loss: 2.413, Acc: 0.831, Base Lr: 1.02e-04
+2026-04-24 02:35:51,179 multiscale.train INFO: Epoch 5 done. Time per batch: 198.788[s] Speed: 72.0[samples/s]
+2026-04-24 02:35:51,179 multiscale.train INFO: ----------
+2026-04-24 02:38:06,366 multiscale.train INFO: Epoch[6] Iteration[100/149] Loss: 2.025, Acc: 0.898, Base Lr: 1.02e-04
+2026-04-24 02:39:10,173 multiscale.train INFO: Epoch 6 done. Time per batch: 198.208[s] Speed: 72.2[samples/s]
+2026-04-24 02:39:10,173 multiscale.train INFO: ----------
+2026-04-24 02:41:25,264 multiscale.train INFO: Epoch[7] Iteration[100/148] Loss: 1.768, Acc: 0.934, Base Lr: 1.03e-04
+2026-04-24 02:42:27,691 multiscale.train INFO: Epoch 7 done. Time per batch: 196.728[s] Speed: 72.2[samples/s]
+2026-04-24 02:42:27,692 multiscale.train INFO: ----------
+2026-04-24 02:44:42,884 multiscale.train INFO: Epoch[8] Iteration[100/150] Loss: 1.644, Acc: 0.952, Base Lr: 1.03e-04
+2026-04-24 02:45:47,996 multiscale.train INFO: Epoch 8 done. Time per batch: 199.506[s] Speed: 72.2[samples/s]
+2026-04-24 02:45:47,996 multiscale.train INFO: ----------
+2026-04-24 02:48:03,447 multiscale.train INFO: Epoch[9] Iteration[100/149] Loss: 1.567, Acc: 0.959, Base Lr: 1.04e-04
+2026-04-24 02:49:07,237 multiscale.train INFO: Epoch 9 done. Time per batch: 198.433[s] Speed: 72.1[samples/s]
+2026-04-24 02:49:07,238 multiscale.train INFO: ----------
+2026-04-24 02:51:22,312 multiscale.train INFO: Epoch[10] Iteration[100/149] Loss: 1.462, Acc: 0.970, Base Lr: 1.04e-04
+2026-04-24 02:52:27,114 multiscale.train INFO: Epoch 10 done. Time per batch: 198.073[s] Speed: 72.2[samples/s]
+2026-04-24 02:52:27,114 multiscale.train INFO: ----------
+2026-04-24 02:53:44,191 multiscale.train INFO: Validation Results - Epoch: 10
+2026-04-24 02:53:44,192 multiscale.train INFO: mAP: 59.4%
+2026-04-24 02:53:44,192 multiscale.train INFO: CMC curve, Rank-1  :76.3%
+2026-04-24 02:53:44,192 multiscale.train INFO: CMC curve, Rank-5  :88.1%
+2026-04-24 02:53:44,192 multiscale.train INFO: CMC curve, Rank-10 :91.2%
+2026-04-24 02:56:56,834 multiscale.train INFO: Epoch[11] Iteration[100/148] Loss: 1.434, Acc: 0.977, Base Lr: 1.04e-04
+2026-04-24 02:58:25,676 multiscale.train INFO: Epoch 11 done. Time per batch: 280.687[s] Speed: 50.6[samples/s]
+2026-04-24 02:58:25,676 multiscale.train INFO: ----------
+2026-04-24 03:01:36,084 multiscale.train INFO: Epoch[12] Iteration[100/149] Loss: 1.369, Acc: 0.985, Base Lr: 1.05e-04
+2026-04-24 03:03:06,675 multiscale.train INFO: Epoch 12 done. Time per batch: 280.192[s] Speed: 51.1[samples/s]
+2026-04-24 03:03:06,675 multiscale.train INFO: ----------
+2026-04-24 03:06:16,823 multiscale.train INFO: Epoch[13] Iteration[100/149] Loss: 1.372, Acc: 0.983, Base Lr: 1.05e-04
+2026-04-24 03:07:47,457 multiscale.train INFO: Epoch 13 done. Time per batch: 279.960[s] Speed: 51.1[samples/s]
+2026-04-24 03:07:47,457 multiscale.train INFO: ----------
+2026-04-24 03:10:57,645 multiscale.train INFO: Epoch[14] Iteration[100/149] Loss: 1.353, Acc: 0.979, Base Lr: 1.06e-04
+2026-04-24 03:12:28,173 multiscale.train INFO: Epoch 14 done. Time per batch: 279.923[s] Speed: 51.1[samples/s]
+2026-04-24 03:12:28,173 multiscale.train INFO: ----------
+2026-04-24 03:15:38,400 multiscale.train INFO: Epoch[15] Iteration[100/149] Loss: 1.343, Acc: 0.985, Base Lr: 1.06e-04
+2026-04-24 03:17:09,130 multiscale.train INFO: Epoch 15 done. Time per batch: 280.156[s] Speed: 51.1[samples/s]
+2026-04-24 03:17:09,131 multiscale.train INFO: ----------
+2026-04-24 03:20:19,348 multiscale.train INFO: Epoch[16] Iteration[100/149] Loss: 1.311, Acc: 0.985, Base Lr: 1.06e-04
+2026-04-24 03:21:50,103 multiscale.train INFO: Epoch 16 done. Time per batch: 280.187[s] Speed: 51.1[samples/s]
+2026-04-24 03:21:50,103 multiscale.train INFO: ----------
+2026-04-24 03:25:00,121 multiscale.train INFO: Epoch[17] Iteration[100/149] Loss: 1.279, Acc: 0.990, Base Lr: 1.07e-04
+2026-04-24 03:26:30,751 multiscale.train INFO: Epoch 17 done. Time per batch: 279.865[s] Speed: 51.1[samples/s]
+2026-04-24 03:26:30,751 multiscale.train INFO: ----------
+2026-04-24 03:29:40,966 multiscale.train INFO: Epoch[18] Iteration[100/150] Loss: 1.297, Acc: 0.989, Base Lr: 1.07e-04
+2026-04-24 03:31:13,520 multiscale.train INFO: Epoch 18 done. Time per batch: 281.962[s] Speed: 51.1[samples/s]
+2026-04-24 03:31:13,520 multiscale.train INFO: ----------
+2026-04-24 03:34:23,569 multiscale.train INFO: Epoch[19] Iteration[100/149] Loss: 1.259, Acc: 0.992, Base Lr: 1.08e-04
+2026-04-24 03:35:54,246 multiscale.train INFO: Epoch 19 done. Time per batch: 279.928[s] Speed: 51.1[samples/s]
+2026-04-24 03:35:54,246 multiscale.train INFO: ----------
+2026-04-24 03:39:04,280 multiscale.train INFO: Epoch[20] Iteration[100/148] Loss: 1.271, Acc: 0.989, Base Lr: 1.08e-04
+2026-04-24 03:40:34,012 multiscale.train INFO: Epoch 20 done. Time per batch: 277.996[s] Speed: 51.1[samples/s]
+2026-04-24 03:40:34,013 multiscale.train INFO: ----------
+2026-04-24 03:42:38,099 multiscale.train INFO: Validation Results - Epoch: 20
+2026-04-24 03:42:38,099 multiscale.train INFO: mAP: 61.3%
+2026-04-24 03:42:38,099 multiscale.train INFO: CMC curve, Rank-1  :76.9%
+2026-04-24 03:42:38,099 multiscale.train INFO: CMC curve, Rank-5  :88.1%
+2026-04-24 03:42:38,099 multiscale.train INFO: CMC curve, Rank-10 :91.0%
+2026-04-24 03:45:47,927 multiscale.train INFO: Epoch[21] Iteration[100/150] Loss: 1.256, Acc: 0.992, Base Lr: 1.08e-04
+2026-04-24 03:47:20,417 multiscale.train INFO: Epoch 21 done. Time per batch: 281.537[s] Speed: 51.1[samples/s]
+2026-04-24 03:47:20,417 multiscale.train INFO: ----------
+2026-04-24 03:50:30,525 multiscale.train INFO: Epoch[22] Iteration[100/149] Loss: 1.259, Acc: 0.988, Base Lr: 1.09e-04
+2026-04-24 03:52:01,088 multiscale.train INFO: Epoch 22 done. Time per batch: 279.881[s] Speed: 51.1[samples/s]
+2026-04-24 03:52:01,089 multiscale.train INFO: ----------
+2026-04-24 03:55:11,258 multiscale.train INFO: Epoch[23] Iteration[100/150] Loss: 1.241, Acc: 0.992, Base Lr: 1.09e-04
+2026-04-24 03:56:43,679 multiscale.train INFO: Epoch 23 done. Time per batch: 281.795[s] Speed: 51.1[samples/s]
+2026-04-24 03:56:43,679 multiscale.train INFO: ----------
+2026-04-24 03:59:54,141 multiscale.train INFO: Epoch[24] Iteration[100/150] Loss: 1.241, Acc: 0.991, Base Lr: 1.10e-04
+2026-04-24 04:01:26,603 multiscale.train INFO: Epoch 24 done. Time per batch: 282.134[s] Speed: 51.0[samples/s]
+2026-04-24 04:01:26,604 multiscale.train INFO: ----------
+2026-04-24 04:04:36,574 multiscale.train INFO: Epoch[25] Iteration[100/149] Loss: 1.244, Acc: 0.992, Base Lr: 1.10e-04
+2026-04-24 04:06:07,217 multiscale.train INFO: Epoch 25 done. Time per batch: 279.809[s] Speed: 51.1[samples/s]
+2026-04-24 04:06:07,217 multiscale.train INFO: ----------
+2026-04-24 04:09:17,373 multiscale.train INFO: Epoch[26] Iteration[100/150] Loss: 1.230, Acc: 0.992, Base Lr: 1.10e-04
+2026-04-24 04:10:49,894 multiscale.train INFO: Epoch 26 done. Time per batch: 281.882[s] Speed: 51.1[samples/s]
+2026-04-24 04:10:49,896 multiscale.train INFO: ----------
+2026-04-24 04:14:00,036 multiscale.train INFO: Epoch[27] Iteration[100/148] Loss: 1.236, Acc: 0.991, Base Lr: 1.11e-04
+2026-04-24 04:15:28,965 multiscale.train INFO: Epoch 27 done. Time per batch: 278.266[s] Speed: 51.1[samples/s]
+2026-04-24 04:15:28,965 multiscale.train INFO: ----------
+2026-04-24 04:18:39,121 multiscale.train INFO: Epoch[28] Iteration[100/149] Loss: 1.228, Acc: 0.989, Base Lr: 1.11e-04
+2026-04-24 04:20:09,797 multiscale.train INFO: Epoch 28 done. Time per batch: 280.043[s] Speed: 51.1[samples/s]
+2026-04-24 04:20:09,797 multiscale.train INFO: ----------
+2026-04-24 04:23:20,060 multiscale.train INFO: Epoch[29] Iteration[100/149] Loss: 1.220, Acc: 0.993, Base Lr: 1.12e-04
+2026-04-24 04:24:50,743 multiscale.train INFO: Epoch 29 done. Time per batch: 280.155[s] Speed: 51.1[samples/s]
+2026-04-24 04:24:50,743 multiscale.train INFO: ----------
+2026-04-24 04:28:00,842 multiscale.train INFO: Epoch[30] Iteration[100/149] Loss: 1.204, Acc: 0.992, Base Lr: 1.12e-05
+2026-04-24 04:29:32,400 multiscale.train INFO: Epoch 30 done. Time per batch: 279.852[s] Speed: 51.1[samples/s]
+2026-04-24 04:29:32,400 multiscale.train INFO: ----------
+2026-04-24 04:31:36,498 multiscale.train INFO: Validation Results - Epoch: 30
+2026-04-24 04:31:36,498 multiscale.train INFO: mAP: 67.3%
+2026-04-24 04:31:36,498 multiscale.train INFO: CMC curve, Rank-1  :82.0%
+2026-04-24 04:31:36,498 multiscale.train INFO: CMC curve, Rank-5  :91.3%
+2026-04-24 04:31:36,498 multiscale.train INFO: CMC curve, Rank-10 :93.9%
+2026-04-24 04:34:46,546 multiscale.train INFO: Epoch[31] Iteration[100/149] Loss: 1.159, Acc: 0.995, Base Lr: 1.12e-05
+2026-04-24 04:36:17,124 multiscale.train INFO: Epoch 31 done. Time per batch: 279.836[s] Speed: 51.1[samples/s]
+2026-04-24 04:36:17,124 multiscale.train INFO: ----------
+2026-04-24 04:39:27,357 multiscale.train INFO: Epoch[32] Iteration[100/148] Loss: 1.136, Acc: 0.997, Base Lr: 1.13e-05
+2026-04-24 04:40:56,065 multiscale.train INFO: Epoch 32 done. Time per batch: 278.171[s] Speed: 51.1[samples/s]
+2026-04-24 04:40:56,066 multiscale.train INFO: ----------
+2026-04-24 04:44:06,085 multiscale.train INFO: Epoch[33] Iteration[100/148] Loss: 1.144, Acc: 0.994, Base Lr: 1.13e-05
+2026-04-24 04:45:34,791 multiscale.train INFO: Epoch 33 done. Time per batch: 277.943[s] Speed: 51.1[samples/s]
+2026-04-24 04:45:34,792 multiscale.train INFO: ----------
+2026-04-24 04:48:45,098 multiscale.train INFO: Epoch[34] Iteration[100/149] Loss: 1.123, Acc: 0.997, Base Lr: 1.14e-05
+2026-04-24 04:50:15,590 multiscale.train INFO: Epoch 34 done. Time per batch: 280.030[s] Speed: 51.1[samples/s]
+2026-04-24 04:50:15,590 multiscale.train INFO: ----------
+2026-04-24 04:53:25,630 multiscale.train INFO: Epoch[35] Iteration[100/149] Loss: 1.114, Acc: 0.999, Base Lr: 1.14e-05
+2026-04-24 04:54:56,351 multiscale.train INFO: Epoch 35 done. Time per batch: 279.984[s] Speed: 51.1[samples/s]
+2026-04-24 04:54:56,351 multiscale.train INFO: ----------
+2026-04-24 04:58:06,551 multiscale.train INFO: Epoch[36] Iteration[100/149] Loss: 1.117, Acc: 0.998, Base Lr: 1.14e-05
+2026-04-24 04:59:37,423 multiscale.train INFO: Epoch 36 done. Time per batch: 280.289[s] Speed: 51.0[samples/s]
+2026-04-24 04:59:37,423 multiscale.train INFO: ----------
+2026-04-24 05:02:47,532 multiscale.train INFO: Epoch[37] Iteration[100/150] Loss: 1.114, Acc: 0.999, Base Lr: 1.15e-05
+2026-04-24 05:04:19,854 multiscale.train INFO: Epoch 37 done. Time per batch: 281.644[s] Speed: 51.1[samples/s]
+2026-04-24 05:04:19,854 multiscale.train INFO: ----------
+2026-04-24 05:07:30,021 multiscale.train INFO: Epoch[38] Iteration[100/149] Loss: 1.118, Acc: 0.997, Base Lr: 1.15e-05
+2026-04-24 05:09:00,633 multiscale.train INFO: Epoch 38 done. Time per batch: 279.980[s] Speed: 51.1[samples/s]
+2026-04-24 05:09:00,633 multiscale.train INFO: ----------
+2026-04-24 05:12:10,785 multiscale.train INFO: Epoch[39] Iteration[100/148] Loss: 1.107, Acc: 0.998, Base Lr: 1.16e-05
+2026-04-24 05:13:39,548 multiscale.train INFO: Epoch 39 done. Time per batch: 278.127[s] Speed: 51.1[samples/s]
+2026-04-24 05:13:39,548 multiscale.train INFO: ----------
+2026-04-24 05:16:49,361 multiscale.train INFO: Epoch[40] Iteration[100/150] Loss: 1.103, Acc: 0.998, Base Lr: 1.16e-05
+2026-04-24 05:18:23,002 multiscale.train INFO: Epoch 40 done. Time per batch: 281.715[s] Speed: 51.1[samples/s]
+2026-04-24 05:18:23,002 multiscale.train INFO: ----------
+2026-04-24 05:20:27,007 multiscale.train INFO: Validation Results - Epoch: 40
+2026-04-24 05:20:27,007 multiscale.train INFO: mAP: 68.9%
+2026-04-24 05:20:27,008 multiscale.train INFO: CMC curve, Rank-1  :82.7%
+2026-04-24 05:20:27,008 multiscale.train INFO: CMC curve, Rank-5  :92.0%
+2026-04-24 05:20:27,008 multiscale.train INFO: CMC curve, Rank-10 :94.2%
+2026-04-24 05:23:36,951 multiscale.train INFO: Epoch[41] Iteration[100/148] Loss: 1.104, Acc: 0.998, Base Lr: 1.16e-05
+2026-04-24 05:25:05,680 multiscale.train INFO: Epoch 41 done. Time per batch: 277.898[s] Speed: 51.1[samples/s]
+2026-04-24 05:25:05,680 multiscale.train INFO: ----------
+2026-04-24 05:28:15,749 multiscale.train INFO: Epoch[42] Iteration[100/149] Loss: 1.097, Acc: 0.998, Base Lr: 1.17e-05
+2026-04-24 05:29:46,414 multiscale.train INFO: Epoch 42 done. Time per batch: 279.955[s] Speed: 51.1[samples/s]
+2026-04-24 05:29:46,414 multiscale.train INFO: ----------
+2026-04-24 05:32:56,302 multiscale.train INFO: Epoch[43] Iteration[100/148] Loss: 1.099, Acc: 0.998, Base Lr: 1.17e-05
+2026-04-24 05:34:25,102 multiscale.train INFO: Epoch 43 done. Time per batch: 277.915[s] Speed: 51.1[samples/s]
+2026-04-24 05:34:25,102 multiscale.train INFO: ----------
+2026-04-24 05:37:35,129 multiscale.train INFO: Epoch[44] Iteration[100/148] Loss: 1.096, Acc: 0.998, Base Lr: 1.18e-05
+2026-04-24 05:39:03,902 multiscale.train INFO: Epoch 44 done. Time per batch: 278.015[s] Speed: 51.1[samples/s]
+2026-04-24 05:39:03,902 multiscale.train INFO: ----------
+2026-04-24 05:42:13,968 multiscale.train INFO: Epoch[45] Iteration[100/149] Loss: 1.093, Acc: 0.998, Base Lr: 1.18e-05
+2026-04-24 05:43:44,380 multiscale.train INFO: Epoch 45 done. Time per batch: 279.675[s] Speed: 51.1[samples/s]
+2026-04-24 05:43:44,380 multiscale.train INFO: ----------
+2026-04-24 05:46:54,474 multiscale.train INFO: Epoch[46] Iteration[100/149] Loss: 1.100, Acc: 0.998, Base Lr: 1.18e-05
+2026-04-24 05:48:25,352 multiscale.train INFO: Epoch 46 done. Time per batch: 280.188[s] Speed: 51.1[samples/s]
+2026-04-24 05:48:25,352 multiscale.train INFO: ----------
+2026-04-24 05:51:35,308 multiscale.train INFO: Epoch[47] Iteration[100/149] Loss: 1.091, Acc: 0.999, Base Lr: 1.19e-05
+2026-04-24 05:53:05,828 multiscale.train INFO: Epoch 47 done. Time per batch: 279.693[s] Speed: 51.1[samples/s]
+2026-04-24 05:53:05,828 multiscale.train INFO: ----------
+2026-04-24 05:56:15,900 multiscale.train INFO: Epoch[48] Iteration[100/149] Loss: 1.088, Acc: 0.999, Base Lr: 1.19e-05
+2026-04-24 05:57:46,630 multiscale.train INFO: Epoch 48 done. Time per batch: 279.996[s] Speed: 51.1[samples/s]
+2026-04-24 05:57:46,630 multiscale.train INFO: ----------
+2026-04-24 06:00:56,935 multiscale.train INFO: Epoch[49] Iteration[100/150] Loss: 1.090, Acc: 0.999, Base Lr: 1.20e-05
+2026-04-24 06:02:29,776 multiscale.train INFO: Epoch 49 done. Time per batch: 282.354[s] Speed: 51.0[samples/s]
+2026-04-24 06:02:29,776 multiscale.train INFO: ----------
+2026-04-24 06:05:40,005 multiscale.train INFO: Epoch[50] Iteration[100/149] Loss: 1.091, Acc: 0.998, Base Lr: 1.20e-06
+2026-04-24 06:07:11,585 multiscale.train INFO: Epoch 50 done. Time per batch: 280.077[s] Speed: 51.1[samples/s]
+2026-04-24 06:07:11,585 multiscale.train INFO: ----------
+2026-04-24 06:09:16,193 multiscale.train INFO: Validation Results - Epoch: 50
+2026-04-24 06:09:16,193 multiscale.train INFO: mAP: 69.7%
+2026-04-24 06:09:16,193 multiscale.train INFO: CMC curve, Rank-1  :83.1%
+2026-04-24 06:09:16,193 multiscale.train INFO: CMC curve, Rank-5  :92.4%
+2026-04-24 06:09:16,193 multiscale.train INFO: CMC curve, Rank-10 :94.3%
+2026-04-24 06:12:26,443 multiscale.train INFO: Epoch[51] Iteration[100/149] Loss: 1.089, Acc: 0.998, Base Lr: 1.20e-06
+2026-04-24 06:13:57,087 multiscale.train INFO: Epoch 51 done. Time per batch: 280.110[s] Speed: 51.1[samples/s]
+2026-04-24 06:13:57,087 multiscale.train INFO: ----------
+2026-04-24 06:17:06,981 multiscale.train INFO: Epoch[52] Iteration[100/149] Loss: 1.082, Acc: 0.999, Base Lr: 1.21e-06
+2026-04-24 06:18:37,527 multiscale.train INFO: Epoch 52 done. Time per batch: 279.660[s] Speed: 51.1[samples/s]
+2026-04-24 06:18:37,527 multiscale.train INFO: ----------
+2026-04-24 06:21:47,739 multiscale.train INFO: Epoch[53] Iteration[100/149] Loss: 1.083, Acc: 0.999, Base Lr: 1.21e-06
+2026-04-24 06:23:18,356 multiscale.train INFO: Epoch 53 done. Time per batch: 280.045[s] Speed: 51.1[samples/s]
+2026-04-24 06:23:18,356 multiscale.train INFO: ----------
+2026-04-24 06:26:28,393 multiscale.train INFO: Epoch[54] Iteration[100/150] Loss: 1.089, Acc: 0.999, Base Lr: 1.22e-06
+2026-04-24 06:28:00,853 multiscale.train INFO: Epoch 54 done. Time per batch: 281.715[s] Speed: 51.1[samples/s]
+2026-04-24 06:28:00,853 multiscale.train INFO: ----------
+2026-04-24 06:31:10,608 multiscale.train INFO: Epoch[55] Iteration[100/149] Loss: 1.082, Acc: 0.999, Base Lr: 1.22e-06
+2026-04-24 06:32:41,125 multiscale.train INFO: Epoch 55 done. Time per batch: 279.487[s] Speed: 51.2[samples/s]
+2026-04-24 06:32:41,125 multiscale.train INFO: ----------
+2026-04-24 06:35:50,971 multiscale.train INFO: Epoch[56] Iteration[100/148] Loss: 1.084, Acc: 0.999, Base Lr: 1.22e-06
+2026-04-24 06:37:19,619 multiscale.train INFO: Epoch 56 done. Time per batch: 277.706[s] Speed: 51.2[samples/s]
+2026-04-24 06:37:19,619 multiscale.train INFO: ----------
+2026-04-24 06:40:29,564 multiscale.train INFO: Epoch[57] Iteration[100/149] Loss: 1.086, Acc: 0.999, Base Lr: 1.23e-06
+2026-04-24 06:42:00,065 multiscale.train INFO: Epoch 57 done. Time per batch: 279.635[s] Speed: 51.2[samples/s]
+2026-04-24 06:42:00,065 multiscale.train INFO: ----------
+2026-04-24 06:45:10,033 multiscale.train INFO: Epoch[58] Iteration[100/149] Loss: 1.082, Acc: 0.999, Base Lr: 1.23e-06
+2026-04-24 06:46:40,662 multiscale.train INFO: Epoch 58 done. Time per batch: 279.804[s] Speed: 51.1[samples/s]
+2026-04-24 06:46:40,662 multiscale.train INFO: ----------
+2026-04-24 06:49:50,560 multiscale.train INFO: Epoch[59] Iteration[100/150] Loss: 1.081, Acc: 0.999, Base Lr: 1.24e-06
+2026-04-24 06:51:23,038 multiscale.train INFO: Epoch 59 done. Time per batch: 281.582[s] Speed: 51.1[samples/s]
+2026-04-24 06:51:23,038 multiscale.train INFO: ----------
+2026-04-24 06:54:32,993 multiscale.train INFO: Epoch[60] Iteration[100/149] Loss: 1.082, Acc: 0.998, Base Lr: 1.24e-06
+2026-04-24 06:56:04,509 multiscale.train INFO: Epoch 60 done. Time per batch: 279.725[s] Speed: 51.1[samples/s]
+2026-04-24 06:56:04,509 multiscale.train INFO: ----------
+2026-04-24 06:58:08,408 multiscale.train INFO: Validation Results - Epoch: 60
+2026-04-24 06:58:08,408 multiscale.train INFO: mAP: 70.0%
+2026-04-24 06:58:08,408 multiscale.train INFO: CMC curve, Rank-1  :83.3%
+2026-04-24 06:58:08,408 multiscale.train INFO: CMC curve, Rank-5  :92.3%
+2026-04-24 06:58:08,408 multiscale.train INFO: CMC curve, Rank-10 :94.4%
