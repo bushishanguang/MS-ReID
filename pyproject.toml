@@ -9,6 +9,11 @@ dependencies = [
     "torchvision==0.14.1",
     "pytorch-ignite==0.1.2",
     "yacs",
+    "fastapi",
+    "uvicorn[standard]",
+    "python-multipart",
+    "pillow",
+    "qdrant-client>=1.9,<1.12",
 ]
 
 [[tool.uv.index]]

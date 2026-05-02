@@ -8,3 +8,17 @@ __pycache__/
 core/storage/datasets/market1501/
 core/storage/datasets/dukemtmc-reid/
 docs/
+!docs/
+docs/*
+!docs/MS-ReID Web 系统增量开发记录.md
+
+app/frontend/node_modules/
+app/frontend/dist/
+app/frontend/*.tsbuildinfo
+app/frontend/vite.config.js
+app/frontend/vite.config.d.ts
+app/backend/vector_store/qdrant/*
+!app/backend/vector_store/qdrant/.gitkeep
+app/backend/static/visual/generated/
+app/backend/static/retrieval/gallery/*
+!app/backend/static/retrieval/gallery/.gitkeep
